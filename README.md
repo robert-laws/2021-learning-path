@@ -1,3 +1,3 @@
 # 2021 Learning Path
 
-[The Internet](/internet)
+[The Internet](/internet/index.md)
