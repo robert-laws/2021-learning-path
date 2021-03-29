@@ -1,4 +1,4 @@
-# The Internet {#internet}
+# The Internet
 
 The internet is a global system of connected devices, routers, and modems.
 
@@ -39,4 +39,4 @@ Not all Markdown applications support extended syntax elements. You’ll need to
 Lightweight Markup Languages
 There are several lightweight markup languages that are supersets of Markdown. They include Gruber’s basic syntax and build upon it by adding additional elements like tables, code blocks, syntax highlighting, URL auto-linking, and footnotes. Many of the most popular Markdown applications use one of the following lightweight markup languages:
 
-[Back to Top](#internet)
+[Back to Top](#the-internet)
