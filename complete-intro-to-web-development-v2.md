@@ -32,6 +32,10 @@
 
 [HTML ID Attributes](#html-id-attributes)
 
+[Semantic Naming](#semantic-naming)
+
+[Meta HTML](#meta-html)
+
 ---
 
 ## Basic HTML
@@ -85,3 +89,40 @@ ID can be used only once per page. They are used to provide unique semantic info
 ```html
 <h3 id="stadium-project-title">Stadium Build Project</h3>
 ```
+
+## Semantic Naming
+
+Choose names for what an item _is_ versus what it looks like. Selecting good names helps improve understandability of the code and makes future refactoring easier.
+
+```html
+<div>
+  <h3 class="blog-post-title">Blog Post Title</h3>
+  <p class="blog-post-text">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium,
+    reprehenderit!
+  </p>
+</div>
+```
+
+## Meta HTML
+
+Base code required to have a valid HTML document. Begin with doctype declaration, html tag, head and body sections.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>A New Webpage</title>
+  </head>
+  <body>
+    <h1>The Webpage Title</h1>
+    <!-- useful comment for this page -->
+  </body>
+</html>
+```
+
+**Script** tag is used for javascript content/files or to import files.
+
+**Style** tag is used to directly add CSS to a HTML document.
+
+**Link** tag is used to import CSS files.
