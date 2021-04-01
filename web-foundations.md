@@ -1,4 +1,23 @@
-# Foundations
+# Web Foundations
+
+**Description**: foundational concepts for web development.
+
+**Type**: topical
+
+**Categories**
+
+- web
+
+**Tags**
+
+- internet
+- tcp
+- dns
+- http
+- cors
+- web sockets
+
+**Contents**
 
 [The Internet](#the-internet)
 

@@ -1,18 +1,20 @@
 # Complete Intro to Web Development, v2
 
-**description**: basic overview of html, css, and javascript.
+**Description**: basic overview of html, css, and javascript.
 
-**categories**
+**Type**: course
+
+**Categories**
 
 - html
 - css
 - javascript
 
-**tags**
+**Tags**
 
 - semantic html
 
-**navigation**
+**Contents**
 
 [Basic HTML](#basic-html)
 

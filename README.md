@@ -1,3 +1,5 @@
 # 2021 Learning Path
 
-[Foundations](/foundations.md)
+[Web Foundations](/web-foundations.md)
+
+[Complete Intro to Web Development, v2](/complete-intro-to-web-development-v2.md)
