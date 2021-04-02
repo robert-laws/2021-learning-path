@@ -32,6 +32,14 @@
 
 - [Head Section](#head-section)
 
+- [Hierarchy and Semantics](#hierarchy-and-semantics)
+
+- [Lists](#lists)
+
+- [Strong and Emphasis](#strong-and-emphasis)
+
+- [Links](#links)
+
 ---
 
 ## Basic HTML
@@ -163,4 +171,44 @@ The `<script>` and `<style>` tags can be used to add both JavaScript and CSS dir
   <link rel="stylesheet" href="site-styles.css" />
   <script src="site-scripts.js" defer></script>
 </head>
+```
+
+## Hierarchy and Semantics
+
+HTML elements have an inherent hierarchy. `<h1> - <h6>` are for headings, with `<h1>` being more important than `<h2>`, and so on. `<p>` tags are for paragraph content and are separate from headings, but should be used in conjunction with headings to create meaningful content. Users on a webpage and search engines will give more importance to a properly used `<h1>` tag than a `<h2>` tag. Screen readers will also parse a webpage and create an outline of a webpage using the tags to provide quick information to a user. The tags also carry semantic value and should be used according to their semantic role.
+
+## Lists
+
+Lists come in two main types, unordered and ordered.
+
+```html
+<ul>
+  <li>Apple</li>
+  <li>Pear</li>
+  <li>Banana</li>
+</ul>
+
+<ol>
+  <li>Open the door</li>
+  <li>Put away umbrella</li>
+  <li>Sit down on chair</li>
+</ol>
+```
+
+## Strong and Emphasis
+
+The `<strong>` tag is used for text that has strong importance. The `<em>` tag is used for text that has emphasis. Both tags carry semantic meaning with them and change the text to be bold and italic respectively. When transforming text for purely stylistic purposes, CSS should be used instead.
+
+## Links
+
+Links are created using the `<a>` tag. It takes several attributes. The most important is `href`, which tells the link where to go. Another attribute that can be used is `title`, which can provide more information about the link - shown in a tooltip when the link is hovered.
+
+```html
+<p>
+  When searching the web use
+  <a href="http://www.google.com" title="The world's most popular search engine"
+    >Google</a
+  >
+  to find the best results.
+</p>
 ```
