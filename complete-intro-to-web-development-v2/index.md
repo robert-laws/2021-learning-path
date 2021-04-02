@@ -16,7 +16,7 @@
 
 **Supporting Files**
 
-- [HTML](/complete-intro-to-web-development-v2/html-section.html)
+- [HTML](html-section.html)
 
 **Contents**
 
