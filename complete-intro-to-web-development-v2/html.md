@@ -40,6 +40,20 @@
 
 - [Links](#links)
 
+- [Description Lists](#description-lists)
+
+- [Quotations](#quotations)
+
+- [Abbreviations](#abbreviations)
+
+- [Contact Details](#contact-details)
+
+- [Subscript and Superscript](#subscript-and-superscript)
+
+- [Computer Code](#computer-code)
+
+- [Dates and Times](#dates-and-times)
+
 ---
 
 ## Basic HTML
@@ -211,4 +225,125 @@ Links are created using the `<a>` tag. It takes several attributes. The most imp
   >
   to find the best results.
 </p>
+```
+
+## Description Lists
+
+Used when there are lists that include a term and its definition together. An example is a list of questions and their answers or a list of dictionary words and their definitions.
+
+```html
+<dl>
+  <dt>Bird</dt>
+  <dd>Animal that often has the capability of flight.</dd>
+  <dt>Fish</dt>
+  <dd>Animal with the capability of swimming in water.</dd>
+</dl>
+```
+
+## Quotations
+
+There are two common ways to create quotations either as a blockquote, which are used for longer quotes or an inline quotation, which is often shorter. Quotations often come with an author, which can be attributed using the `cite` tag.
+
+```html
+<!-- Blockquote for extended quotations -->
+<blockquote cite="https://en.wikipedia.org/wiki/Lorem_ipsum">
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat.
+  </p>
+</blockquote>
+
+<!-- Inline Quote for short quotations -->
+<p>
+  The guide said,
+  <q cite="https://en.wikipedia.org/wiki/Lorem_ipsum"
+    >Lorem ipsum dolor sit amet</q
+  >, which everyone heard clearly.
+</p>
+
+<p>
+  Web developers use placeholder text to show how text will look.
+  <q cite="https://en.wikipedia.org/wiki/Lorem_ipsum"
+    >The best know is Lorem Ipsum</q
+  >
+  --
+  <a href="https://en.wikipedia.org/wiki/Lorem_ipsum"><cite>Wikipedia</cite></a>
+</p>
+```
+
+## Abbreviations
+
+This `<abbr>` tag is used to wrap around an abbreviation or acronym.
+
+```html
+<p>
+  Anchor tag should point to a
+  <abbr title="Uniform Resource Locator">URL</abbr> for the link.
+</p>
+<p>
+  The student asked <abbr title="Professor">Prof.</abbr> Green how to submit the
+  assignment.
+</p>
+```
+
+## Contact Details
+
+Content that includes contact details - address, phone, email, etc. - should be wrapped with an `<address>` tag.
+
+```html
+<address>
+  <p>
+    Bob Cobb<br />
+    123 Main St.<br />
+    Boston, MA 01234<br />
+    USA
+  </p>
+</address>
+
+<address>
+  <ul>
+    <li>Email: bobcobb@net.com</li>
+    <li>Tel: 412 236-2151</li>
+  </ul>
+</address>
+```
+
+## Subscript and Superscript
+
+Are used occasionally when marking up dates, formulas, or mathematical equations.
+
+```html
+<p>The event is scheduled for the 24<sup>th</sup></p>
+<p>The symbol for Oxygen is H<sub>2</sub>O</p>
+```
+
+## Computer Code
+
+There are several useful tags available for displaying computer code within a webpage. `<pre>` and `<code>` are commonly used together. `<pre>` will tell the browser to retain the whitespace as it appears in the html code on the webpage. `<code>` indicates a generic piece of code.
+
+Additionally, `<var>` is available for variable names. `<kbd>` is available for keyboard input or commands. And `<samp>` is available for output of a computer program.
+
+```html
+<pre>
+  <code>
+    let name = "bob";
+
+    if(nameChanged) {
+      name = "hal";
+      return;
+    }
+  </code>
+</pre>
+```
+
+## Dates and Time
+
+The `<time>` element will provide information to the browser about dates and times in a machine-readable format, which then can be displayed in a user-friendly way on the browser.
+
+```html
+<time datetime="2021-04-12">12 April 2021</time>
+<time datetime="14:45">14:45</time>
+<time datetime="2021-04-15T19:30">7.30pm, 15 April 2021</time>
 ```
