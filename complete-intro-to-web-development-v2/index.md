@@ -17,4 +17,9 @@
 **Contents**
 
 - [HTML](html.md)
+- [Semantic HTML](semantic-html.md)
+- [HTML Elements](html-elements.md)
+
+**Code Examples**
+
 - [HTML Example](html-section.html)
