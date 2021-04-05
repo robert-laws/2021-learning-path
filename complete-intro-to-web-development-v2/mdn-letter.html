@@ -5,6 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MDN Letter</title>
+    <style>
+      body {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .sender-column {
+        text-align: right;
+      }
+
+      h1 {
+        font-size: 1.5em;
+      }
+
+      h2 {
+        font-size: 1.3em;
+      }
+
+      p,
+      ul,
+      ol,
+      dl,
+      address {
+        font-size: 1.1em;
+      }
+
+      p,
+      li,
+      dd,
+      dt,
+      address {
+        line-height: 1.5;
+      }
+    </style>
   </head>
   <body>
     <address class="sender-column">
@@ -19,7 +53,7 @@
       </p>
     </address>
 
-    <address>
+    <address class="sender-column">
       <p>
         <em>
           <strong>Tel</strong>: 123-456-7890<br />
@@ -28,7 +62,7 @@
       </p>
     </address>
 
-    <p>
+    <p class="sender-column">
       <time class="sender-column">20 January 2016</time>
     </p>
 
