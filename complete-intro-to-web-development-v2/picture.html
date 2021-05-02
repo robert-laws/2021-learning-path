@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML - Picture Element</title>
+  </head>
+  <body>
+    <picture>
+      <source
+        srcset="images/library-books-large-with-logo.webp"
+        type="image/webp"
+        media="(min-width: 800px)"
+      />
+      <source
+        srcset="
+          images/library-books-medium-with-logo.webp,
+          images/library-books-large-with-logo       2x
+        "
+        type="image/webp"
+        media="(min-width: 600px)"
+      />
+      <source
+        srcset="images/library-books-small-without-logo.webp"
+        type="image/webp"
+      />
+      <img src="images/library-books.jpg" alt="library books" />
+    </picture>
+  </body>
+</html>

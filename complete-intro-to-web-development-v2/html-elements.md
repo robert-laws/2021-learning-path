@@ -64,6 +64,30 @@ The `<figure>` element is a containing element for things like images, diagrams,
     src="images/mountain-view.jpg"
     alt="A peaceful mountain view in the Swiss country"
   />
-  <figcaption>A Scenic Mountain View</figcaption>
+  <figcaption>A Scenic Mountain View in the Colorado Rockies</figcaption>
 </figure>
+```
+
+## CSS Background Images
+
+```css
+div {
+  background-image: url('images/mountain-view.jpg');
+}
+```
+
+Should be used only for decorative purposes and not as page content. This is because background images using css have no semantic meaning and cannot have text equivalents.
+
+## Picture
+
+The picture element provides flexibility for displaying alternate versions of an image depending on the display or device being used. This is done by a browser selecting the best image from one or more `<source>` elements nested inside the `<picture>` element. An `<img>` element is also nested within the `<picture>` element to provide a fallback for browser that don't support the `<picture>` element. Common use cases for the `<picture>` element include situations where different images formats or sizes can be served depending on the device or browser capabilities.
+
+```html
+<picture>
+  <source
+    srcset="images/library-books-large-with-logo.webp"
+    type="image/webp"
+  />
+  <img src="images/library-books.jpg" alt="library books" />
+</picture>
 ```
