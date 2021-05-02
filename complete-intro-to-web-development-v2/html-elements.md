@@ -91,3 +91,19 @@ The picture element provides flexibility for displaying alternate versions of an
   <img src="images/library-books.jpg" alt="library books" />
 </picture>
 ```
+
+```html
+<picture>
+  <source
+    media="(min-width: 800px)"
+    srcset="
+      /images/sunset-360.jpg   360w,
+      /images/sunset-720.jpg   720w,
+      /images/sunset-1440.jpg 1440w
+    "
+    sizes="33.3vw"
+  />
+  <source srcset="/images/sunset-720.jpg 2x, /images/sunset-360.jpg 1x" />
+  <img src="/images/sunset.jpg" alt="Picture of a Ha Long Bay sunset" />
+</picture>
+```
