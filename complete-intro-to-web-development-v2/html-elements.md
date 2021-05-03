@@ -20,6 +20,8 @@
 
 - [HTML Elements Table](#html-elements-table)
 
+- [Image Formats](#image-formats)
+
 ---
 
 ## Base
@@ -175,3 +177,21 @@ The picture element provides flexibility for displaying alternate versions of an
 | title      | document title                                   | meta    |
 | tr         | table row                                        |         |
 | ul         | unordered list                                   |         |
+
+## Image Formats
+
+The `<img>` element embeds an image into the document. It requires a `src` attribute as a path to the image file to be embedded. The `alt` attribute is also recommended and it contains descriptive information about the image that can be used by screen readers.
+
+There are several different supported image formats that can be used, including:
+
+| abbreviation | name                            | MIME type     | file extension | summary                                                           |
+| ------------ | ------------------------------- | ------------- | -------------- | ----------------------------------------------------------------- |
+| AVIF         | AV1 Image File Format           | image/avif    | .avif          | better compression than png or jpeg format                        |
+| GIF          | Graphics Interchange Format     | image/gif     | .gif           | used for simple images and animations                             |
+| JPEG         | Joint Photographic Expert Group | image/jpeg    | .jpg,.jpeg     | used for lossy compression of still images                        |
+| PNG          | Portable Network Graphics       | image/png     | .png           | more precise than JPEG for reproduction of image sources          |
+| SVG          | Scalable Vector Graphics        | image/svg+xml | .svg           | vector image format; good for images that require different sizes |
+| WebP         | Web Picture                     | image/webp    | .webp          | very good for images and animated images with good compression    |
+| BMP          | Bitmap                          | image/bmp     | .bmp           | better alternatives should be used                                |
+| ICO          | Microsoft Icon                  | image/x-icon  | .ico           | better alternatives should be used                                |
+| TIFF         | Tagged Image File Format        | image/tiff    | .tif, .tiff    | better alternatives should be used                                |
