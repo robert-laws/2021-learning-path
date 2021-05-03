@@ -16,6 +16,10 @@
 
 - [Figure and Figcaption](#figure-and-figcapture)
 
+- [Picture](#picture)
+
+- [HTML Elements Table](#html-elements-table)
+
 ---
 
 ## Base
@@ -107,3 +111,67 @@ The picture element provides flexibility for displaying alternate versions of an
   <img src="/images/sunset.jpg" alt="Picture of a Ha Long Bay sunset" />
 </picture>
 ```
+
+## HTML Elements Table
+
+| Element    | Description                                      | Type    |
+| ---------- | ------------------------------------------------ | ------- |
+| a          | hyperlink                                        |         |
+| abbr       | abbreviation                                     |         |
+| address    | contact information                              |         |
+| article    | syndicatable or reusable composition             | section |
+| aside      | tangentially related content                     | section |
+| base       | base URL                                         | meta    |
+| blockquote | quoted from another source                       |         |
+| body       | document body                                    | section |
+| br         | line break                                       |         |
+| button     | button control                                   |         |
+| code       | computer code                                    |         |
+| dd         | description definition                           |         |
+| div        | generic flow container                           |         |
+| dl         | description list                                 |         |
+| dt         | description term                                 |         |
+| em         | stress emphasis                                  |         |
+| fieldset   | group of form controls                           | form    |
+| figcaption | caption for figure                               |         |
+| figure     | figure with optional caption                     |         |
+| footer     | footer for a page or section                     | section |
+| form       | user-submitted form                              | form    |
+| h1-h6      | section heading                                  | heading |
+| head       | container for document metadata                  | meta    |
+| header     | introductory aid for a page or section           | section |
+| hgroup     | heading group                                    | heading |
+| hr         | thematic break                                   |         |
+| html       | root element                                     | root    |
+| i          | idiomatic text                                   |         |
+| img        | image                                            |         |
+| input      | form control                                     | form    |
+| label      | caption for a form control                       | form    |
+| legend     | caption for a fieldset                           | form    |
+| li         | list item                                        |         |
+| link       | link metadata                                    | meta    |
+| main       | container for the main content of the document   | section |
+| meta       | text metadata                                    | meta    |
+| nav        | section with navigational links                  | section |
+| noscript   | fallback content for script                      |         |
+| ol         | ordered list                                     |         |
+| option     | option in a list or combo box control            | form    |
+| p          | paragraph                                        |         |
+| picture    | image                                            |         |
+| pre        | block of preformatted text                       |         |
+| script     | embedded script                                  |         |
+| section    | generic application section                      | section |
+| select     | list box control                                 | form    |
+| span       | generic phrasing container                       |         |
+| strong     | importance                                       |         |
+| style      | embedded styling information                     |         |
+| table      | table                                            |         |
+| tbody      | table body                                       |         |
+| td         | table cell                                       |         |
+| textarea   | multiline text control                           | form    |
+| tfoot      | footer rows in a table                           |         |
+| th         | table header cell                                |         |
+| time       | machine-readable equivalent of date or time data |         |
+| title      | document title                                   | meta    |
+| tr         | table row                                        |         |
+| ul         | unordered list                                   |         |
