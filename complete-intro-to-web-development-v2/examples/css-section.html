@@ -56,37 +56,40 @@
         padding: 20px;
       }
 
+      .columns-container {
+        display: flex;
+        justify-content: center;
+      }
+
       .item-container {
         display: flex;
+        justify-content: center;
+        width: 1000px;
       }
 
       .box {
         min-width: 100px;
         min-height: 100px;
         border: 1px solid #000;
+        padding: 10px;
       }
 
       .box-one {
         background-color: red;
         color: white;
-        height: 300px;
+        flex: 1;
       }
 
       .box-two {
-        background-color: blue;
+        background-color: gray;
         color: white;
-        height: 270px;
-        align-self: flex-end;
-        order: 10;
-        flex: 1 auto;
+        flex: 3;
       }
 
       .box-three {
         background-color: green;
         color: white;
-        height: 200px;
-        align-self: center;
-        order: 2;
+        flex: 1;
       }
     </style>
   </head>
@@ -105,10 +108,75 @@
       <div class="box-2">Content Box</div>
     </section>
     <hr />
-    <section>
+    <section class="columns-container">
       <div class="item-container">
         <div class="box box-one">Box 1</div>
-        <div class="box box-two">Box 2</div>
+        <div class="box box-two">
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus,
+            debitis. Laborum modi consequuntur esse est earum commodi iure unde
+            nisi distinctio? Eum inventore odit fugit deleniti saepe nostrum
+            facere quia excepturi quibusdam placeat. Maiores, quo sapiente
+            blanditiis voluptatibus, voluptate fugiat et facilis recusandae
+            inventore adipisci totam quisquam nisi quia nihil!
+          </p>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus,
+            debitis. Laborum modi consequuntur esse est earum commodi iure unde
+            nisi distinctio? Eum inventore odit fugit deleniti saepe nostrum
+            facere quia excepturi quibusdam placeat. Maiores, quo sapiente
+            blanditiis voluptatibus, voluptate fugiat et facilis recusandae
+            inventore adipisci totam quisquam nisi quia nihil!
+          </p>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus,
+            debitis. Laborum modi consequuntur esse est earum commodi iure unde
+            nisi distinctio? Eum inventore odit fugit deleniti saepe nostrum
+            facere quia excepturi quibusdam placeat. Maiores, quo sapiente
+            blanditiis voluptatibus, voluptate fugiat et facilis recusandae
+            inventore adipisci totam quisquam nisi quia nihil!
+          </p>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus,
+            debitis. Laborum modi consequuntur esse est earum commodi iure unde
+            nisi distinctio? Eum inventore odit fugit deleniti saepe nostrum
+            facere quia excepturi quibusdam placeat. Maiores, quo sapiente
+            blanditiis voluptatibus, voluptate fugiat et facilis recusandae
+            inventore adipisci totam quisquam nisi quia nihil!
+          </p>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus,
+            debitis. Laborum modi consequuntur esse est earum commodi iure unde
+            nisi distinctio? Eum inventore odit fugit deleniti saepe nostrum
+            facere quia excepturi quibusdam placeat. Maiores, quo sapiente
+            blanditiis voluptatibus, voluptate fugiat et facilis recusandae
+            inventore adipisci totam quisquam nisi quia nihil!
+          </p>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus,
+            debitis. Laborum modi consequuntur esse est earum commodi iure unde
+            nisi distinctio? Eum inventore odit fugit deleniti saepe nostrum
+            facere quia excepturi quibusdam placeat. Maiores, quo sapiente
+            blanditiis voluptatibus, voluptate fugiat et facilis recusandae
+            inventore adipisci totam quisquam nisi quia nihil!
+          </p>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus,
+            debitis. Laborum modi consequuntur esse est earum commodi iure unde
+            nisi distinctio? Eum inventore odit fugit deleniti saepe nostrum
+            facere quia excepturi quibusdam placeat. Maiores, quo sapiente
+            blanditiis voluptatibus, voluptate fugiat et facilis recusandae
+            inventore adipisci totam quisquam nisi quia nihil!
+          </p>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus,
+            debitis. Laborum modi consequuntur esse est earum commodi iure unde
+            nisi distinctio? Eum inventore odit fugit deleniti saepe nostrum
+            facere quia excepturi quibusdam placeat. Maiores, quo sapiente
+            blanditiis voluptatibus, voluptate fugiat et facilis recusandae
+            inventore adipisci totam quisquam nisi quia nihil!
+          </p>
+        </div>
         <div class="box box-three">Box 3</div>
       </div>
     </section>
