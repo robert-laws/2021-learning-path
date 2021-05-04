@@ -25,6 +25,69 @@
         padding: 10px 16px;
         border: 1px solid #ddd;
       }
+
+      nav::before {
+        content: 'beginning of nav';
+      }
+
+      nav::after {
+        content: 'end of nav';
+      }
+
+      button:disabled {
+        border: 3px solid red;
+      }
+
+      div.box-1 {
+        width: 100px;
+        height: 100px;
+        box-sizing: border-box;
+        margin: 0 10px;
+        border: 1px solid #000;
+        padding: 20px;
+      }
+
+      div.box-2 {
+        width: 100px;
+        height: 100px;
+        box-sizing: content-box;
+        margin: 0 10px;
+        border: 1px solid #000;
+        padding: 20px;
+      }
+
+      .item-container {
+        display: flex;
+      }
+
+      .box {
+        min-width: 100px;
+        min-height: 100px;
+        border: 1px solid #000;
+      }
+
+      .box-one {
+        background-color: red;
+        color: white;
+        height: 300px;
+      }
+
+      .box-two {
+        background-color: blue;
+        color: white;
+        height: 270px;
+        align-self: flex-end;
+        order: 10;
+        flex: 1 auto;
+      }
+
+      .box-three {
+        background-color: green;
+        color: white;
+        height: 200px;
+        align-self: center;
+        order: 2;
+      }
     </style>
   </head>
   <body>
@@ -36,5 +99,18 @@
         <a href="/">Navigation Link 3</a>
       </nav>
     </header>
+    <section>
+      <button type="button" disabled>Click Here</button>
+      <div class="box-1">Border Box</div>
+      <div class="box-2">Content Box</div>
+    </section>
+    <hr />
+    <section>
+      <div class="item-container">
+        <div class="box box-one">Box 1</div>
+        <div class="box box-two">Box 2</div>
+        <div class="box box-three">Box 3</div>
+      </div>
+    </section>
   </body>
 </html>

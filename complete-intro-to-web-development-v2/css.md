@@ -4,6 +4,8 @@
 
 - [CSS Example](examples/css-section.html)
 
+- [CSS Specificity Guide](https://cssspecificity.com/)
+
 **Resources**
 
 - [CSS: Cascading Style Sheets from MDN](https://developer.mozilla.org/en-US/docs/Web/CSS)
@@ -15,6 +17,14 @@
 - [Parent and Children](#parent-and-children)
 
 - [Selectors and the Cascade](#selectors-and-the-cascade)
+
+- [Pseudo-Classes](#pseudo-classes)
+
+- [Pseudo-Elements](#pseudo-elements)
+
+- [Box Model](#box-model)
+
+- [Flexbox](#flexbox)
 
 ---
 
@@ -84,4 +94,91 @@ Another selector that can be used is the `id`, which is applied to one and only 
 <header>
   <h1 id="page-main-title">My Main Title</h1>
 </header>
+```
+
+## Pseudo-Classes
+
+Pseudo-classes provide the ability to apply styling based on a user interaction or the location of an element with relationship to other elements. List of [Pseudo-classes](https://developer.mozilla.org/en-US/docs/Web/CSS/:active) from MDN.
+
+```css
+.title:hover {
+  color: red;
+  text-decoration: underline;
+}
+
+div.author:first-child {
+  background-color: gray;
+}
+
+button:disabled {
+  border: 3px solid red;
+}
+```
+
+## Pseudo-Elements
+
+It's possible to add content to a page using only CSS and pseudo-elements. This is done by using the `::before` and `::after` pseudo-elements.
+
+```css
+nav::before {
+  content: 'beginning of nav';
+}
+
+nav::after {
+  content: 'end of nav';
+}
+```
+
+## Display Types
+
+- inline - element will flow without line breaks
+- block - element will take entire line of content
+- inline-block - element generally acts like inline to allow content to flow, but respects height, width, padding, and margin
+- flex - allows elements to work within a flex container
+- grid - allows layout in grids and arrange elements within the grids precisely
+- table - table layout
+- none - element will not display
+
+## Box Model
+
+The box model defines how an element calculates its margin, border, width, and content.
+
+```css
+div.box-1 {
+  width: 100px;
+  height: 100px;
+  box-sizing: border-box;
+  margin: 10px;
+  border: 1px solid #000;
+  padding: 20px;
+}
+```
+
+Elements that make use of the `box-sizing: border-box` property value calculate the total width and height of the element using padding and border. The property `box-sizing: content-box` will calculate the element sizing with only the content.
+
+## Flexbox
+
+Is a display mode that allows for control of children element layout within a parent element.
+
+```html
+<style>
+  .item-container {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .box {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #000;
+  }
+</style>
+
+<div class="item-container">
+  <div class="box box-1">Box 1</div>
+  <div class="box box-2">Box 2</div>
+  <div class="box box-3">Box 3</div>
+</div>
 ```
