@@ -89,7 +89,7 @@ p {
 
 ## Using Web Fonts
 
-There are two general ways to use web fonts. First, using a font file in a format like `woff` or `woff2` that can be saved with the HTML and CSS files and referenced in the CSS code using the `@font-face` rule.
+There are two general ways to use web fonts. First, using a font file in a format like `woff` or `woff2` that can be saved with the HTML and CSS files and referenced in the CSS code using the `@font-face` rule. A great resource like [Font Squirrel](https://www.fontsquirrel.com/) is very good to obtain font files.
 
 ```css
 /* font definition */
