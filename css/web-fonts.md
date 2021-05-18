@@ -120,3 +120,5 @@ After selecting a font from the online service, the font can then be added via a
 /* font referenced */
 font-family: 'Lato', sans-serif;
 ```
+
+A great resource for dealing with some of the quirks of web fonts is a guide to [Font Loading Strategies](https://www.zachleat.com/web/comprehensive-webfonts/).
