@@ -18,6 +18,8 @@
 
 - [Using Web Fonts](#using-web-fonts)
 
+- [Variable Fonts](#variable-fonts)
+
 ---
 
 ## Fundamental Concepts
@@ -122,3 +124,67 @@ font-family: 'Lato', sans-serif;
 ```
 
 A great resource for dealing with some of the quirks of web fonts is a guide to [Font Loading Strategies](https://www.zachleat.com/web/comprehensive-webfonts/).
+
+## Variable Fonts
+
+To use a variable font, its first necessary to find them. There are several good resources for finding and experimenting with variable fonts. Once a variable font is downloaded, it can be referenced in CSS through the @font-face rule, as shown below.
+
+```css
+@font-face {
+  font-family: 'Commissioner';
+  font-weight: 100 900;
+  font-style: normal;
+  font-stretch: normal;
+  src: url('fonts/Commissioner.ttf') format('truetype');
+  font-display: swap;
+}
+```
+
+There are two types of axes that can be used by variable fonts. The first five are registered axes, which are the most frequently used axes and standardized (weight, width, slant, italic, and optical size). The other possible type of axes are custom axes, which are defined by the font designer if desired. The custom axes is given a four-letter tag used to reference the property in CSS. Some examples of both are the following:
+
+```css
+/* Weight */
+.my_font {
+  font-weight: 900;
+  /* OR */
+  font-variation-settings: 'wght' 900;
+}
+
+/* Width */
+.my_font {
+  font-stretch: 105%;
+  /* OR */
+  font-variation-settings: 'wdth' 105;
+}
+
+/* Optical Size */
+.my_font {
+  font-optical-sizing: auto || none;
+  /* OR */
+  font-variation-settings: 'opsz' 144;
+}
+
+/* Slant */
+.my_font {
+  font-style: oblique -5deg;
+  /* OR */
+  font-variation-settings: 'slnt' -5;
+}
+
+/* Italic */
+.my_font {
+  font-style: italic;
+  /* OR */
+  font-variation-settings: 'ital' 1;
+  /* Prevent automatic browser behavior */
+  font-synthesis: none;
+}
+
+/* Custom Variation Axes */
+.my_font {
+  font-family: 'Rocher Color'
+  /* Use Uppercase Letters */
+  /* [FLAR,VOLM,slnt,wght] */
+  font-variation-settings: 'BVEL' 0, 'SHDW' 100;
+}
+```
