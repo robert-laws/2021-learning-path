@@ -58,7 +58,7 @@ Many of the properties mentioned above can be used simultaneously with the `font
 font: italic normal bold normal 3em/1.5 Helvetica, Arial, sans-serif;
 ```
 
-In the example above, the font-size and line-height properties must include a '/' between them to be applied. If something else, like a space is used, the entire line is ignored.
+In the example above, the `font-size` and `line-height` properties must include a '/' between them to be applied. If something else, like a space is used, the entire line is ignored.
 
 ## Web Safe Fonts
 
