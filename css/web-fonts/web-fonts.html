@@ -11,6 +11,10 @@
       rel="stylesheet"
     />
     <style>
+      :root {
+        --h4-font-family: 'Commissioner', Arial, Helvetica, sans-serif;
+      }
+
       html {
         font-size: 10px;
       }
@@ -31,14 +35,42 @@
         font-style: normal;
       }
 
+      @font-face {
+        font-family: 'Commissioner';
+        font-weight: 100 900;
+        font-style: normal;
+        font-stretch: normal;
+        src: url('fonts/Commissioner.ttf') format('truetype');
+        font-display: swap;
+      }
+
       h1 {
+        font-family: Arial, Helvetica, sans-serif;
         font-size: 4rem;
-        font-family: 'Crete Round Italic';
+      }
+
+      @supports (font-variation-settings: 'wght' 900) {
+        h1 {
+          font-family: 'Commissioner';
+          font-variation-settings: 'wght' 900, 'slnt' -12, 'VOLM' 100;
+        }
       }
 
       h2 {
         font-size: 3rem;
         font-family: 'Crete Round Regular';
+      }
+
+      h3 {
+        font-family: 'Commissioner';
+        font-size: 2rem;
+        font-variation-settings: 'wght' 600, 'slnt' -10, 'VOLM' 100;
+      }
+
+      h4 {
+        font-family: var(--h4-font-family);
+        font-size: 3.6rem;
+        font-variation-settings: 'wght' 100, 'slnt' 0, 'VOLM' 0;
       }
 
       p {
@@ -53,11 +85,66 @@
       /* p {
         font: italic normal bold normal 2em/1.8 Helvetica, Arial, sans-serif;
       } */
+
+      /* variable fonts */
+
+      /* Weight */
+      .my_font {
+        font-weight: 900;
+        /* OR */
+        font-variation-settings: 'wght' 900;
+      }
+
+      /* Width */
+      .my_font {
+        font-stretch: 105%;
+        /* OR */
+        font-variation-settings: 'wdth' 105;
+      }
+
+      /* Optical Size */
+      .my_font {
+        font-optical-sizing: auto || none;
+        /* OR */
+        font-variation-settings: 'opsz' 144;
+      }
+
+      /* Slant */
+      .my_font {
+        font-style: oblique -5deg;
+        /* OR */
+        font-variation-settings: 'slnt' -5;
+      }
+
+      /* Italic */
+      .my_font {
+        font-style: italic;
+        /* OR */
+        font-variation-settings: 'ital' 1;
+        /* Prevent automatic browser behavior */
+        font-synthesis: none;
+      }
+
+      /* Custom Variation Axes */
+      .my_font {
+        /* Use Uppercase Letters */
+        /* [FLAR,VOLM,slnt,wght] */
+        font-variation-settings: 'BVEL' 0, 'SHDW' 100;
+      }
     </style>
   </head>
   <body>
     <h1>Website Title</h1>
     <h2>Website Title - H2</h2>
+    <h3>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet
+      consequuntur porro adipisci?
+    </h3>
+    <h4>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt quam
+      consectetur harum officia adipisci rem temporibus magnam expedita repellat
+      quas.
+    </h4>
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum porro
       deserunt asperiores assumenda, at delectus quaerat id minima ipsa iste.
