@@ -18,15 +18,15 @@ It's possible to take elements out of the normal flow by making use of the `posi
 
 The options for the `position` property are `static`, `relative`, `absolute`, `fixed`, or `sticky`.
 
-### Static
+#### Static
 
 The default behavior for the position property is static. This will arrange elements in their normal position within the document flow.
 
-### Relative
+#### Relative
 
 By assigning the position property a value of relative, the element will be available for repositioning based on use of the `top`, `bottom`, `left`, or `right` properties. The values provided to the element's position will move it with reference to it's position within the normal flow. Additionally, the element will move in the opposite direction of the positioning value specified. For example, is a value of `100px` is given for the `bottom` position, the element will move 100px up from the bottom.
 
-### Absolute
+#### Absolute
 
 By assigning the position property a value of absolute, the element will be taken out of the normal flow and positioned based on the values of the `top`, `bottom`, `left`, or `right` properties. The element is also positioned absolutely with reference to its containing element, but only if the position of containing element (or another ancestor) is explicitly defined as a position other than `static`.
 
@@ -48,15 +48,15 @@ By assigning the position property a value of absolute, the element will be take
 }
 ```
 
-### Fixed
+#### Fixed
 
 A position defined as `fixed` will behave exactly like an absolutely positioned element, except that the element will remain fixed in place relative to it's nearest positioned ancestor or the initial containing block if no ancestor is positioned.
 
-### Sticky
+#### Sticky
 
 A position defined as `sticky` acts as a hybrid of a relative and fixed positioned element. An element with the position sticky will move with the flow of elements until it reaches a threshold position defined by `top`, `bottom`, `left`, or `right`. At this point the element will behave like a fixed positioned element.
 
-### Z-Index
+#### Z-Index
 
 When positioning elements with most of the positioning options there will be situations when elements overlap and are placed under or on top of each other. To control the stacking order of elements, the `z-index` property is available. By default, elements have a z-index of 0 and can be made to appear higher in the stacking order by giving a value of greater than 0. Elements with a z-index higher than other elements will appear "on top" of them when overlapping.
 
