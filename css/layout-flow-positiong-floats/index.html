@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flow</title>
+    <style>
+      .relative-container {
+        height: 400px;
+        width: 400px;
+        border: 1px solid #000;
+        position: relative;
+        left: 200px;
+        top: -20px;
+      }
+
+      .second-div {
+        height: 100px;
+        width: 100px;
+        border: 1px solid #000;
+      }
+
+      .relative-div {
+        position: relative;
+        left: 30px;
+        top: 30px;
+      }
+
+      .absolute-div {
+        position: absolute;
+        top: 200px;
+        right: 20px;
+      }
+
+      .card {
+        border: 1px solid #000;
+        border-radius: 5px;
+        background-color: #eee;
+        height: 50px;
+        width: 100px;
+        padding: 0 10px;
+        margin: 20px;
+        position: relative;
+        z-index: -200;
+      }
+
+      .card > span {
+        height: 30px;
+        width: 30px;
+        text-align: center;
+        background-color: red;
+        font-weight: bold;
+        font-size: 26px;
+        color: #fff;
+        padding: 5px;
+        border-radius: 50%;
+        position: absolute;
+        top: -15px;
+        right: -15px;
+        z-index: -100;
+      }
+
+      .fixed-div {
+        /* position: relative; */
+        padding: 100px 0;
+      }
+
+      nav {
+        position: fixed;
+      }
+
+      .list-container {
+        position: absolute;
+      }
+
+      .sticky-list {
+        position: sticky;
+        top: 100px;
+      }
+
+      .container {
+        height: 100px;
+        width: 100px;
+        background-color: gray;
+        position: relative;
+      }
+
+      .sub-element {
+        height: 20px;
+        width: 20px;
+        background-color: red;
+        position: absolute;
+        top: -5px;
+        right: -5px;
+      }
+
+      .first-paragraph {
+        background-color: lightsalmon;
+        padding: 10px;
+      }
+
+      .box {
+        padding: 5px;
+        margin: 5px;
+        height: 100px;
+        width: 100px;
+        background-color: darkseagreen;
+        float: left;
+      }
+
+      .cleared {
+        clear: left;
+      }
+
+      .wrapper {
+        background-color: rgb(79, 185, 227);
+        padding: 10px;
+        color: #fff;
+        display: flow-root;
+      }
+
+      /* .wrapper::after {
+        content: '';
+        clear: both;
+        display: block;
+      } */
+    </style>
+  </head>
+  <body>
+    <h1>Main Heading - Normal Flow</h1>
+    <div class="fixed-div">
+      <nav>
+        <h2>Navigation</h2>
+      </nav>
+    </div>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet mollitia
+      eius totam excepturi neque architecto labore iste repellendus nisi harum.
+    </p>
+    <div>Additional text</div>
+    <div class="sticky-list">
+      <ul>
+        <li>item #1</li>
+        <li>item #2</li>
+        <li>item #3</li>
+        <li>item #4</li>
+      </ul>
+    </div>
+    <hr />
+
+    <div class="relative-container">
+      <!-- <div class="second-div">div element</div> -->
+      <div class="second-div absolute-div">div element - absolute position</div>
+      <div class="second-div relative-div">div element - relative position</div>
+    </div>
+
+    <hr />
+    <div class="card">
+      <span>12</span>
+      <p>Top Card</p>
+    </div>
+
+    <hr />
+    <div class="container">
+      <div class="sub-element">text</div>
+    </div>
+
+    <hr />
+
+    <div class="wrapper">
+      <div class="box">Box</div>
+      <p class="first-paragraph">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga vero,
+        enim nesciunt, possimus saepe quo, aliquam deleniti recusandae
+        cupiditate at error voluptatum culpa.
+      </p>
+    </div>
+    <p>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique,
+      ratione aut earum dolorum nihil reprehenderit laborum, quasi
+      necessitatibus sequi nesciunt sunt excepturi odio ad quod iusto, labore
+      amet! Magnam reprehenderit deleniti modi maiores! Lorem ipsum dolor sit
+      amet consectetur adipisicing elit. Fugit laboriosam repellat dignissimos!
+      Itaque laborum blanditiis deserunt eligendi laudantium consequatur
+      repudiandae?
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum soluta
+      culpa tempora officiis est. Eius magni nihil facilis suscipit? Dolor,
+      animi eaque voluptatibus molestiae obcaecati harum eum doloremque eligendi
+      dolorum alias nisi distinctio incidunt tempora facere ipsa. Asperiores
+      odio delectus repudiandae ut reprehenderit ab eligendi vitae, error
+      placeat dicta iste quam doloribus expedita recusandae aspernatur alias
+      totam hic, saepe sed animi odit officiis quisquam consequatur. Commodi,
+      enim. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum,
+      dignissimos! Cum eligendi reprehenderit, a accusantium inventore
+      recusandae vitae deserunt quia nobis exercitationem ducimus reiciendis
+      quibusdam sequi, velit enim assumenda facilis saepe, nostrum repellat
+      maxime.
+    </p>
+  </body>
+</html>
