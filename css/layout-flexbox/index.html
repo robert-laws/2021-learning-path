@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox</title>
+    <style>
+      main {
+        display: flex;
+        flex-flow: row wrap;
+        height: 400px;
+        justify-content: flex-end;
+        align-items: center;
+      }
+
+      article {
+        padding: 10px;
+        margin: 5px;
+        border: 1px solid #000;
+        background-color: lightskyblue;
+        flex: 0 150px;
+      }
+
+      .big-article {
+        flex: 0 300px;
+        align-self: flex-end;
+        order: -1;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h2>Main Header</h2>
+    </header>
+    <main>
+      <article>Article #1</article>
+      <article>Article #2</article>
+      <article>Article #3</article>
+      <article class="big-article">Article #4</article>
+      <article>Article #5</article>
+    </main>
+    <footer>
+      <p>Site footer</p>
+    </footer>
+  </body>
+</html>
