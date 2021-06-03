@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Grid - 3</title>
+    <style>
+      .container {
+        display: grid;
+        gap: 10px;
+        width: 100%;
+        grid-template-rows:
+          [header-start] 5rem [main-start] minmax(30rem, auto)
+          [footer-start] 10rem [footer-end];
+        grid-template-columns: [aside-start] 1fr [main-start] 4fr [main-end];
+      }
+
+      .item {
+        background-color: lightgray;
+      }
+
+      .header {
+        grid-row: header-start / main-start;
+        grid-column: aside-start / main-end;
+      }
+
+      .footer {
+        grid-column: aside-start / main-end;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item header">Header</div>
+      <div class="item aside">Aside</div>
+      <div class="item main">Main</div>
+      <div class="item footer">Footer</div>
+    </div>
+  </body>
+</html>

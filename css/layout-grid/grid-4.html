@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Grid - 4</title>
+    <style>
+      .item {
+        background-color: lightgray;
+      }
+
+      .container {
+        display: grid;
+        grid-template-rows: 4rem 20rem 8rem;
+        grid-template-columns: 1fr 1fr 20rem;
+        grid-template-areas:
+          'header header header'
+          'main main aside'
+          'footer footer footer';
+        gap: 10px;
+        width: 100%;
+      }
+
+      .header {
+        grid-area: header;
+      }
+
+      .main {
+        grid-area: main;
+      }
+
+      .aside {
+        grid-area: aside;
+      }
+
+      .footer {
+        grid-area: footer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item header">Header</div>
+      <div class="item main">Main</div>
+      <div class="item aside">Aside</div>
+      <div class="item footer">Footer</div>
+    </div>
+  </body>
+</html>

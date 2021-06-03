@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Layout - Grid</title>
+    <style>
+      .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 5rem minmax(2rem, auto);
+        grid-auto-rows: 20rem;
+        gap: 1rem;
+        width: 100%;
+      }
+
+      .item {
+        background-color: lightgray;
+        text-align: center;
+      }
+
+      .container-2 {
+        border: 1px solid #555;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+        grid-template-rows: 5rem;
+        grid-auto-rows: 2rem;
+        gap: 10px;
+        width: 100%;
+      }
+
+      .item-number-2 {
+        background-color: lightskyblue;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item item-1">Item One</div>
+      <div class="item item-2">Item Two</div>
+      <div class="item item-3">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat
+        consectetur dolorum eos adipisci rem repellat voluptatem reiciendis
+        tenetur. Possimus nihil natus ipsa provident amet esse similique vitae
+        ipsam, odit culpa. Quod quaerat culpa sed obcaecati molestias eos
+        voluptatum id doloribus error quasi delectus earum cumque eveniet,
+        ducimus deserunt rerum sequi? Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Accusantium animi quaerat obcaecati cum magnam quas
+        harum placeat quod sapiente velit. Lorem ipsum dolor sit amet
+        consectetur, adipisicing elit. Assumenda quam aliquam ad aspernatur
+        neque et vero sequi consequatur, aliquid tempore!
+      </div>
+      <div class="item item-4">Item Four</div>
+      <div class="item item-5">Item Five</div>
+      <div class="item item-6">Item Six</div>
+      <div class="item item-7">Item Seven</div>
+      <div class="item item-8">Item Eight</div>
+      <div class="item item-9">Item Nine</div>
+    </div>
+
+    <div class="container-2">
+      <div class="item-number-2 item-1">Item #1</div>
+      <div class="item-number-2 item-2">Item #2</div>
+      <div class="item-number-2 item-3">Item #3</div>
+      <div class="item-number-2 item-4">Item #4</div>
+      <div class="item-number-2 item-5">Item #5</div>
+      <div class="item-number-2 item-6">Item #6</div>
+      <div class="item-number-2 item-7">Item #7</div>
+      <div class="item-number-2 item-8">Item #8</div>
+      <div class="item-number-2 item-9">Item #9</div>
+      <div class="item-number-2 item-10">Item #10</div>
+      <div class="item-number-2 item-11">Item #11</div>
+      <div class="item-number-2 item-12">Item #12</div>
+    </div>
+  </body>
+</html>
