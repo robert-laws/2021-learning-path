@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Layouts</title>
+    <style>
+      html {
+        box-sizing: border-box;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: inherit;
+      }
+
+      .container {
+        border: 1px solid #000;
+        width: 400px;
+        margin: 0 auto;
+      }
+
+      .clearfix::after {
+        content: '';
+        display: table;
+        clear: both;
+      }
+
+      p {
+        padding: 10px;
+      }
+
+      .my-content {
+        background-color: lightgray;
+        border: 10px solid #555;
+        width: 180px;
+        height: 320px;
+        margin: 10px;
+        padding: 5px;
+        float: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container clearfix">
+      <div class="my-content">My Content</div>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
+        voluptatum excepturi necessitatibus aut quod impedi nam quo?
+      </p>
+    </div>
+  </body>
+</html>
