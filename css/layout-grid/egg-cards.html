@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Egg Cards</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        display: grid;
+        grid-template-columns: 20rem;
+        gap: 1rem;
+        justify-content: center;
+      }
+
+      @media screen and (min-width: 1000px) {
+        .container {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+
+      .card img {
+        width: 100%;
+        height: auto;
+      }
+
+      .card h2 {
+        margin: 0;
+        padding: 0 1rem;
+      }
+
+      .card p {
+        padding: 0 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <img src="images/egg-1.png" alt="Egg" />
+        <div class="content">
+          <h2>Interesting Egg</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
+            eligendi assumenda mollitia.
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="images/egg-2.png" alt="Egg" />
+        <div class="content">
+          <h2>Breakfast</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
+            eligendi assumenda mollitia.
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="images/egg-3.png" alt="Egg" />
+        <div class="content">
+          <h2>Egg Hunt</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
+            eligendi assumenda mollitia.
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="images/egg-4.png" alt="Egg" />
+        <div class="content">
+          <h2>Morning Rise</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
+            eligendi assumenda mollitia.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
