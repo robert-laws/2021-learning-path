@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern CSS: Grid</title>
+    <style>
+      /* .grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: minmax(8rem, auto);
+        grid-auto-rows: minmax(4rem, auto);
+        gap: 1rem;
+        width: 60rem;
+        margin: 0 auto;
+        border: 1px solid #000;
+      } */
+
+      .item {
+        background-color: darkslategray;
+      }
+
+      .item div {
+        color: white;
+        font-weight: bold;
+        font-size: 2rem;
+        background-color: lightskyblue;
+      }
+
+      /* .item-1 {
+        background-color: skyblue;
+        grid-column: 2 / span 2;
+        grid-row: 1 / span 2;
+      }
+
+      .grid-container-2 {
+        display: grid;
+        gap: 5px;
+        grid-template-columns:
+          [sidebar-start] 10rem
+          [content-start] 1fr
+          [content-end];
+
+        grid-template-rows:
+          [header-start] 3rem
+          [content-start] 20rem
+          [footer-start] 4rem
+          [footer-end];
+      }
+
+      .header {
+        grid-column: sidebar-start / content-end;
+        grid-row: header-start / content-start;
+      }
+
+      .footer {
+        grid-column: sidebar-start / content-end;
+      } */
+
+      .grid-container-3 {
+        display: grid;
+        grid-template-columns: 10rem 1fr;
+        grid-template-rows: 5rem 20rem 5rem;
+        grid-template-areas:
+          'header header header'
+          'sidebar content content'
+          'footer footer footer';
+        gap: 5px;
+      }
+
+      .header-new {
+        grid-area: header;
+        justify-self: center;
+        align-self: center;
+      }
+
+      .sidebar-new {
+        grid-area: sidebar;
+      }
+
+      .content-new {
+        grid-area: content;
+      }
+
+      .footer-new {
+        grid-area: footer;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div class="grid-container">
+      <div class="item item-1">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem eius beatae
+        consectetur architecto qui blanditiis sint in ab molestiae.
+      </div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+      <div class="item">7</div>
+      <div class="item">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
+        distinctio atque praesentium laboriosam illo amet eveniet repellendus!
+        Itaque at error totam illo eum?
+      </div>
+    </div>
+    <hr /> -->
+    <!-- <div class="grid-container-2">
+      <div class="item header">1</div>
+      <div class="item sidebar">2</div>
+      <div class="item content">3</div>
+      <div class="item footer">4</div>
+    </div>
+    <hr /> -->
+    <div class="grid-container-3">
+      <div class="item header-new"><div>1</div></div>
+      <div class="item sidebar-new"><div>2</div></div>
+      <div class="item content-new"><div>3</div></div>
+      <div class="item footer-new"><div>4</div></div>
+    </div>
+  </body>
+</html>
