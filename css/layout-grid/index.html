@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Grid</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      /* img {
+        display: block;
+        height: 100%;
+        width: auto;
+      } */
+
+      .container {
+        display: grid;
+        grid-template-columns: [one] 1fr [two] 1fr [three] 1fr [four] 1fr [five] 1fr [six];
+        grid-template-rows: [one] 225px [two] 225px [three] 225px [four];
+        gap: 10px;
+      }
+
+      .container > * {
+        background-color: lightgray;
+      }
+
+      .title {
+        grid-column: span 5;
+      }
+
+      .image {
+        grid-column: span 2;
+        grid-row: span 2;
+        place-self: center center;
+        border: 1px solid #000;
+      }
+
+      .extra {
+        grid-tow: three / four;
+      }
+
+      .subtitle {
+        grid-column: five / six;
+        grid-row: two / three;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title">Title</h1>
+      <p class="main-text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, totam.
+      </p>
+      <img class="image" src="sun.jpg" alt="Sun" />
+      <h4 class="subtitle">Image subtitle</h4>
+      <p class="additional-text">
+        Velit dolor unde explicabo illum ipsa temporibus, hic sed error.
+      </p>
+      <div class="extra">Additional content</div>
+    </div>
+  </body>
+</html>
