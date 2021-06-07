@@ -2,6 +2,30 @@
 
 One of the most challenging aspects of building webpages is managing layout. HTML and CSS offer several different methods to control layout. The layout options include using normal flow, floats, multi-column layout, flexbox, and CSS Grid. To allow for more complex layouts, [CSS Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/grid) aims to be a major step forward by giving developers more control over layout and arrangement of elements on a web page.
 
+## Great Learning Resources
+
+There are several really good and helpful resources available to learn CSS Grid. Here's a quick rundown of resources that helped me learning CSS Grid.
+
+- [A Complete Guides to Grid](https://css-tricks.com/snippets/css/complete-guide-grid/) - CSS-Tricks
+- [Learn CSS Grid](https://learncssgrid.com)
+- [Grid in CSS](https://cssreference.io/css-grid/)
+- [Grid Cheatsheet](https://yoksel.github.io/grid-cheatsheet/)
+
+Visual Examples of Layouts
+
+- [Visual Cheatsheet for Grid Layout](https://grid.malven.co)
+- [CSS Layout](https://csslayout.io)
+
+Interactive Grid Building tools
+
+- [Layoutit!](https://grid.layoutit.com)
+- [Griddy - Learn the CSS Grid](https://griddy.io)
+- [CSS Grid Generator](https://cssgrid-generator.netlify.app)
+
+Fun and Games - to learn CSS Grid
+
+- [Grid Garden](https://cssgridgarden.com)
+
 ## Setting up the Grid
 
 CSS Grid works by creating a grid container using the `display: grid` property. The immediate children of the grid container are called grid items.
