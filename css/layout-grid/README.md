@@ -147,3 +147,78 @@ In this case, there is no need to declare a value for `grid-row` since the item 
 ```
 
 Finally, there are situations where grid items exist in the HTML, but have not been specifically designated a place within the grid, the property `grid-auto-flow` can be used to indicate that an item should be placed on a `row` or `column` first as the grid is populated. Another option in combination with row and column is `dense`, which allows the grid to be filled with items that may move out of place in their normal order for the purpose of filling a gap in the grid.
+
+## Positioning and Alignment
+
+CSS Grid allows for great flexibility when positioning grid items within the grid. Using the `grid-area` property, it's possible to specify where exactly on the grid an item should be placed. There are two main ways to do this. First, the grid item can be placed using starting and ending column and row numbers or named lines. Consider the grid defined below:
+
+```css
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 100px);
+  gap: 5px;
+}
+```
+
+This grid will create a four column by four row grid. If we wanted to take an item and have it occupy two columns and 3 rows, it can be done using the `grid-area` property and column and row numbers following the pattern: `grid-area: <row-start> / <column-start> / <row-end> / <column-end>`.
+
+```css
+.item-5 {
+  grid-area: 2 / 2 / 5 / 4;
+}
+```
+
+Another way a grid item can be assigned to a position on the grid is by using the grid area name as defined by the `grid-template-areas` property for the grid container. For example, in the following grid, there are several template areas named that correspond to the defined template columns and rows - including the header area, which occupies the entire top row.
+
+```css
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 100px);
+  grid-template-areas:
+    'header header header header'
+    'sidebar main main main'
+    'sidebar main main main'
+    'footer footer footer footer';
+  gap: 5px;
+}
+```
+
+To specify that a grid item should take the entire space of a named area, the following property and value should be applied to a grid item.
+
+```css
+.item-1 {
+  grid-area: header;
+}
+```
+
+CSS Grid offers many different ways to align grids, items in the grid, the even individual grid items.
+
+In situations where the total size of the grid is less than the size of the container for the grid, it's possible to make use of the properties `justify-content` and `align-content`. Use of the property `justify-content` applies to the row axis and use of the property `align-content` applies to the column axis.
+
+The available values for `justify-content` and `align-content` include: `start`, `end`, `center`, `stretch`, `space-around`, `space-between`, and `space-evenly`.
+
+A shorthand property for both `justify-content` and `align-content` is `place-content`, which will set both properties in one declaration. It can be used as the following: `place-content: <align-content> <justify-content>`. If only one value is declared, it will be applied for both properties.
+
+```css
+.container {
+  place-content: space-between center;
+}
+```
+
+The properties `justify-items` and `align-items` will apply alignment to all the items within their individual grid cells. The available values for `justify-items` and `align-items` include: `start`, `end`, `center`, and `stretch`. A shorthand property for both `justify-items` and `align-items` is `place-items`, which will set both properties in one declaration. It can be used as the following: `place-items: <align-items> <justify-items>`. If only one value is declared, it will be applied for both properties.
+
+```css
+.container {
+  place-items: start center;
+}
+```
+
+There are situations where it is necessary to change the alignment of one or more individual grid items separate from the entire grid. This can be done with properties `justify-self` and `align-self`. The property will apply alignment to specific items within their individual grid cells. The available values for `justify-self` and `align-self` include: `start`, `end`, `center`, and `stretch`. A shorthand property for both `justify-self` and `align-self` is `place-self`, which will set both properties in one declaration. It can be used as the following: `place-self: <align-self> <justify-self>`. If only one value is declared, it will be applied for both properties.
+
+```css
+.item-1 {
+  place-self: end end;
+}
+```
