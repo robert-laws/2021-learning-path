@@ -12,6 +12,10 @@
         box-sizing: border-box;
       }
 
+      div.topbar {
+        background-color: darkgoldenrod;
+      }
+
       header {
         background-color: skyblue;
       }
@@ -20,24 +24,47 @@
         background-color: beige;
       }
 
+      footer {
+        background-color: lightcoral;
+      }
+
       /* Must be a screen and have a minimum width of 600px. Widths below 600px will not match */
       /* Must also have a maximum width of 1000px. Widths above 1000px will not match */
       /* Resulting query = widths between 600px and 1000px will apply the rule */
-      @media screen and (min-width: 600px) and (max-width: 1000px) {
+      /* @media screen and (min-width: 600px) and (max-width: 1000px) {
         header {
           background-color: lightgreen;
         }
 
         main {
           background-color: lightgray;
+        } */
+
+        .container {
+          display: grid;
+          grid-template-columns: 1fr minmax(30%, 500px) 1fr;
+        }
+
+        header {
+          grid-column: 2 / 3;
+        }
+
+        main {
+          grid-column: 2 / 3;
+        }
+
+        footer {
+          grid-column: 1 / 4;
         }
       }
     </style>
   </head>
   <body>
     <div class="container">
+      <div class="topbar"></div>
       <header><h1>Header</h1></header>
       <main><p>Main Content</p></main>
+      <footer>Footer</footer>
     </div>
   </body>
 </html>
