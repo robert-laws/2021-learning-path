@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My App</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .container {
+      }
+
+      .main-content-1 {
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+      }
+
+      .main-content-1 > * {
+        padding: 1rem;
+      }
+
+      .main-content-2 > * {
+        padding: 1rem;
+      }
+
+      header {
+        background-color: bisque;
+        padding: 1rem;
+      }
+
+      nav {
+        background-color: lightgreen;
+        padding: 1rem;
+      }
+
+      nav a {
+        margin: 0 5px;
+        text-decoration: none;
+        color: #000;
+      }
+
+      .main-content-1 main {
+        background-color: lightblue;
+        flex: 1 1 700px;
+      }
+
+      .main-content-1 aside {
+        background-color: lightsteelblue;
+        flex: 1 1 300px;
+      }
+
+      .main-content-2 {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 1fr);
+      }
+
+      .main-content-2 main {
+        background-color: lightcoral;
+      }
+
+      .main-content-2 aside {
+        background-color: lightgrey;
+      }
+
+      footer {
+        background-color: wheat;
+        padding: 1rem;
+      }
+
+      @media screen and (min-width: 1000px) {
+        .main-content-2 {
+          display: grid;
+          grid-template-columns: 70% 30%;
+        }
+
+        .main-content-2 main {
+          background-color: lightblue;
+        }
+
+        .main-content-2 aside {
+          background-color: lightseagreen;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header><h1>Header</h1></header>
+      <nav>
+        <a href="#">Link1</a>
+        <a href="#">Link2</a>
+        <a href="#">Link3</a>
+        <a href="#">Link4</a>
+      </nav>
+      <section class="main-content-1">
+        <main>Main Content</main>
+        <aside>Related Content</aside>
+      </section>
+      <section class="main-content-2">
+        <main>Main Content</main>
+        <aside>Related Content</aside>
+      </section>
+      <footer>Footer</footer>
+    </div>
+  </body>
+</html>
