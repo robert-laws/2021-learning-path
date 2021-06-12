@@ -27,20 +27,105 @@ a:active {
 
 img {
   width: 100%;
-  height: 300px;
+  height: 100%;
   object-fit: cover;
-}
-
-.main-heading {
-  font-size: 2rem;
-}
-
-.sub-heading {
-  font-size: 0.8rem;
 }
 
 .muted {
   color: #aaa;
+}
+
+/* MOBILE */
+:root {
+  --xl-text: 3rem;
+  --h1-heading: 2rem;
+  --h2-heading: 1.5rem;
+  --sub-heading: 1.2rem;
+  --small-text: 1rem;
+  --big-text: 1.2rem;
+
+  --post-vertical-spacer: 8px 0 2rem;
+  --text-vertical-spacer: 9px 0 1px;
+}
+
+/* TABLET */
+@media (min-width: 700px) {
+  :root {
+    --xl-text: 2.6rem;
+    --h1-heading: 1.8rem;
+    --h2-heading: 1.4rem;
+    --sub-heading: 1rem;
+    --small-text: 0.9rem;
+    --big-text: 1.1rem;
+
+    --post-vertical-spacer: 0 0 1rem;
+    --text-vertical-spacer: 6px 0 1px;
+  }
+}
+
+/* DESKTOP */
+@media (min-width: 1280px) {
+  :root {
+    --xl-text: 2.4rem;
+    --h1-heading: 1.6rem;
+    --h2-heading: 1.2rem;
+    --sub-heading: 0.8rem;
+    --small-text: 0.8rem;
+    --big-text: 1rem;
+
+    --post-vertical-spacer: 0 0 1rem;
+    --text-vertical-spacer: 3px 0 1px;
+  }
+}
+
+.xl-text {
+  font-size: var(--xl-text);
+}
+
+.main-heading {
+  font-size: var(--h1-heading);
+}
+
+.sub-main-heading {
+  font-size: var(--h2-heading);
+}
+
+.big-text {
+  font-size: var(--big-text);
+}
+
+.sub-heading {
+  font-size: var(--sub-heading);
+}
+
+.small-text {
+  display: inline-block;
+  font-size: var(--small-text);
+  margin: var(--text-vertical-spacer);
+}
+
+.text-vertical-spacer {
+  margin: var(--text-vertical-spacer);
+}
+
+.post {
+  margin: var(--post-vertical-spacer);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 300px auto;
+  overflow: hidden;
+}
+
+.post a {
+  overflow: hidden;
+}
+
+.post a img:hover {
+  transform: scale(1.1);
+}
+
+.post a img {
+  transition: transform 0.2s ease-out;
 }
 
 /* SMALL SCREEN */
@@ -66,14 +151,29 @@ img {
   display: none;
 }
 
-/* 
-.recent {
-  grid-column: 2 / 3;
+.recent header {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 20px auto;
-  gap: 10px;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
 }
+
+.recent header h4 {
+  grid-column: 1 / 2;
+}
+
+.recent header .chevrons {
+  display: none;
+}
+
+/* .recent header .chevrons {
+  grid-column: 3 / 4;
+}
+
+.recent header .chevrons a:last-child {
+  margin-left: 0.5rem;
+} */
+/* 
+
 
 .recent h4 {
   grid-column: 1;
