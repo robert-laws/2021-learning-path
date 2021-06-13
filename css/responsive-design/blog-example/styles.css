@@ -151,6 +151,11 @@ img {
 
 .header .main-heading img {
   width: 164px;
+  transition: all 0.2s ease-out;
+}
+
+.header .main-heading img:hover {
+  transform: rotate(4deg);
 }
 
 .header nav {
