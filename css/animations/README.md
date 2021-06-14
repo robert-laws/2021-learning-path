@@ -56,6 +56,18 @@ Transformations can be made to elements on a webpage and include rotation, scali
 }
 ```
 
+The `transform` property can accept two values. Either a `<transform function>` or a value of `none`.
+
+There are several different _transform-functions_ that can be applied to a transform property. Some of the transform functions include:
+
+- **rotate()** - used to rotate an element around a fixed point on the 2D plane
+- **scale()** - used to scale an element up or down on the 2D plane
+- **skew()** - used to skew an element on the 2D plane
+- **translate()** - used to translate (or move) an element on the 2D plane.
+- Also useful are **translateX()** and **translateY()** to translate along either the X or Y axis
+
 ## Animation
 
-...
+CSS animations allows for a transition from one CSS property to another to be animated. This is done by defining the style that will be animated and defining a set of keyframes that indicate the start, waypoints, and end states for the animation.
+
+To setup an animation the first step is to define it using the `animation` property to configure the name, duration, timing-function, delay, iteration count, direction, fill-mode, and play-state. Once the animation is defined, it's possible to define the appearance of the animation with the `@keyframe` rule. At least two keyframes are required and more can be added to provide more description of the animation at intermediate stages of a sequence.
