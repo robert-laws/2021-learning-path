@@ -71,3 +71,64 @@ There are several different _transform-functions_ that can be applied to a trans
 CSS animations allows for a transition from one CSS property to another to be animated. This is done by defining the style that will be animated and defining a set of keyframes that indicate the start, waypoints, and end states for the animation.
 
 To setup an animation the first step is to define it using the `animation` property to configure the name, duration, timing-function, delay, iteration count, direction, fill-mode, and play-state. Once the animation is defined, it's possible to define the appearance of the animation with the `@keyframe` rule. At least two keyframes are required and more can be added to provide more description of the animation at intermediate stages of a sequence.
+
+The configuration options for the animation property can be defined separately as individual sub-properties.
+
+- **animation-name** - Specifies the name of the @keyframes at-rule describing the animation’s keyframes.
+- **animation-duration** - Configures the length of time that an animation should take to complete one cycle.
+- **animation-timing-function** - Configures the timing of the animation; that is, how the animation transitions through keyframes, by establishing acceleration curves.
+- **animation-delay** - Configures the delay between the time the element is loaded and the beginning of the animation sequence.
+- **animation-iteration-count** - Configures the number of times the animation should repeat; you can specify infinite to repeat the animation indefinitely.
+- **animation-direction** - Configures whether or not the animation should alternate direction on each run through the sequence or reset to the start point and repeat itself.
+- **animation-fill-mode** - Configures what values are applied by the animation before and after it is executing.
+- **animation-play-state** - Lets you pause and resume the animation sequence.
+
+#### Basic Animation
+
+The first thing to do is add some values to the animation property, either as a single short-hand definition using the `animation` property, or as individual entries for the animation sub-properties. Once the animation is defined, it's possible to define the keyframes, applying the animation name defined for the element to be animated. The options for the `@keyframes` rule include using the `from` and `to` keywords to indicate the start and end of the keyframes. It's also possible to define the steps for the keyframes as percentages starting at `0%` and going to `100%` with as many steps with different percentage values in between.
+
+```css
+.box {
+  /* basic styles... */
+
+  animation-name: moveBox;
+  animation-duration: 3s;
+  animation-timing-function: ease-out;
+  animation-delay: 1s;
+  animation-iteration-count: 4;
+}
+
+@keyframes moveBox {
+  from {
+    left: 100px;
+  }
+
+  to {
+    left: 500px;
+  }
+}
+
+@keyframes moveBoxAround {
+  0% {
+    left: 50px;
+  }
+
+  50% {
+    left: 1000px;
+    top: 200px;
+  }
+
+  100% {
+    left: 50px;
+  }
+}
+```
+
+This animation - applying the `moveBox` animation - moves the box from the left at 100px to left at 500px. The `animation` property can be re-written in the following way:
+
+```css
+.box {
+  /* animation: name | duration | easing-function | delay | iteration-count */
+  animation: moveBox 3s ease-in 1s 4;
+}
+```
