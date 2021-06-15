@@ -132,3 +132,57 @@ This animation - applying the `moveBox` animation - moves the box from the left 
   animation: moveBox 3s ease-in 1s 4;
 }
 ```
+
+#### Multiple Animations
+
+It's possible to run multiple animations on a single element, each animation with a different set of property values and `@keyframe` rules. The animations will all be applied to the element and run according to the values specified.
+
+```css
+.box {
+  /* styles for the element... */
+
+  animation-duration: 4s, 8s;
+  animation-name: moveAround, fadeOut;
+  animation-timing-function: linear, ease-out;
+  animation-iteration-count: infinite, 1;
+}
+
+@keyframes moveAround {
+  0% {
+    left: 20px;
+    top: 20px;
+  }
+
+  25% {
+    left: 300px;
+    top: 20px;
+  }
+
+  50% {
+    left: 300px;
+    top: 300px;
+  }
+
+  75% {
+    left: 20px;
+    top: 300px;
+  }
+
+  100% {
+    left: 20px;
+    top: 20px;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+```
+
+These animations will move the element around, with the `moveAround` animation going through keyframes based on the percentages for each part of the animation and the `fadeOut` animation will going through the keyframes starting with the `from` keyword and ending at the `to` keyword.
