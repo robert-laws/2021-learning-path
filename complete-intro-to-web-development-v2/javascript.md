@@ -224,3 +224,18 @@ button.addEventListener('click', function () {
   alert('hello!');
 });
 ```
+
+# Event Delegation
+
+It's possible to delegate events through event bubbling. This happens when a parent container listens for events that happen on children elements. For example. if there's an element such as `<div class='buttons'></div>` that is the parent for several buttons, adding an event listener to the parent element will capture events happening from children elements that bubble up through the DOM.
+
+A key feature of event propagation is that events will continue to bubble up along the DOM unless they are stopped by using a method such as `stopPropagation()`.
+
+```javascript
+document.querySelector('.buttons').addEventListener('click', (event) => {
+  if (event.target.tagName === 'BUTTON') {
+    alert(`You clicked on button #${event.target.innerText}.`);
+  }
+  event.stopPropagation();
+});
+```

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript - Event Delegation</title>
+  </head>
+  <body>
+    <div class="buttons">
+      <button class="button">1</button>
+      <button class="button">2</button>
+      <button class="button">3</button>
+      <button class="button">4</button>
+      <button class="button">5</button>
+    </div>
+  </body>
+
+  <script>
+    document.querySelector('.buttons').addEventListener('click', (event) => {
+      if (event.target.tagName === 'BUTTON') {
+        alert(`You clicked on button #${event.target.innerText}.`);
+      }
+      event.stopPropagation();
+    });
+  </script>
+</html>
