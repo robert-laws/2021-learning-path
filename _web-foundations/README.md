@@ -19,21 +19,23 @@
 
 **Contents**
 
-[The Internet](#the-internet)
+- [The Internet](#the-internet)
 
-[TCP / IP / DNS](#tcp--ip--dns)
+- [TCP / IP / DNS](#tcp--ip--dns)
 
-[HTTP](#http)
+- [HTTP](#http)
 
-[HTTP Status Codes](#http-status-codes)
+- [HTTP Status Codes](#http-status-codes)
 
-[URLs / Domains / Sub-Domains](#urls--domains--sub-domains)
+- [URLs / Domains / Sub-Domains](#urls--domains--sub-domains)
 
-[CORS](#cors)
+- [CORS](#cors)
 
-[Web Sockets](#web-sockets)
+- [Web Sockets](#web-sockets)
 
-[Web Platform APIs](#web-platform-apis)
+- [Web Platform APIs](#web-platform-apis)
+
+- [Programming Categories](#programming-categories)
 
 ---
 
@@ -92,3 +94,13 @@ Protocol to support two-way communication channels over a single TCP connection.
 There are many web (or browser) APIs available to developers. A well-known API is the DOM (Document Object Model).
 
 [MDN List of Web APIs](https://developer.mozilla.org/en-US/docs/Web/API)
+
+## Programming Categories
+
+- **Procedural** - organizes code in a top-down, linear progression through the code in a predetermined set of operations.
+
+- **Object-Oriented** - organizes code into logical groupings of data and methods called classes
+
+- **Functional** - organizes code into functions (pure computations vs. procedures) and produces values from the adaptation of the functions.
+
+Some programming languages adopt only one of the categories, although many use more than one - referred to as multi-paradigm languages - and mix the types of programming categories together. JavaScript follows this multi-paradigm approach.
