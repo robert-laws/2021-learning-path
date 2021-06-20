@@ -95,4 +95,16 @@ function newCourse() {
   // console.log(courseTime);
 }
 
-newCourse();
+// newCourse();
+
+const introduction = (name) => {
+  return (greeting = (message) => {
+    console.log(`${message}, ${name} ... how are you?`);
+  });
+};
+
+let welcome = introduction('bob');
+let intro = introduction('melvin');
+
+welcome('howdy');
+intro('nice to meet you');
