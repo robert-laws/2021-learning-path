@@ -106,5 +106,12 @@ const introduction = (name) => {
 let welcome = introduction('bob');
 let intro = introduction('melvin');
 
-welcome('howdy');
-intro('nice to meet you');
+// welcome('howdy');
+// intro('nice to meet you');
+
+let sayHi = function (greeting) {
+  return greeting;
+};
+
+console.log(sayHi('hi'));
+console.log(void sayHi('hello'));

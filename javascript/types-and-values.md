@@ -1,20 +1,76 @@
-# Types and Values
+# Types, Values, and Operators
 
-JavasScript has several different types, including:
+The foundation of any programming language is data. Without data, creating a program is very difficult, if not impossible. Most interactions on the Internet involve data of some kind. Perhaps it's bank account data, or data about a list of products in a shopping cart, or a message on a social media network, or the latest score from the basketball playoffs. Data is the reason why people start up a browser and explore the Internet. JavaScript allows programmers to control data **values** and the **types** of data used in a program.
 
-#### Primitives
+JavasScript allows programmers to work with a lot of different values. These values can include the _total dollar amount_ in an online bank account, a _list of the product names_ in a shopping cart TV on a e-commerce website, the _text_ of a post on a social media website, or the _final score_ of a basketball game. The common feature of all of these examples is that they are values - numbers, text, a list of text, etc. that is displayed on a webpage.
 
-- number
-- string
-- boolean
-- undefined
-- null
-- symbol
+When speaking of values, it makes sense to do so in conjunction with types. In JavaScript, types are the different forms that data can take and are understood by the JavaScript engine. According to MDN, there are currently [nine distinct types](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures). These include:
 
-#### Object
+## Types
 
-- object
+### Data Types (Primitives)
 
-#### Function
+- Number - include integers and decimals (ex. 17, 2.63, -32.62, 5000.01)
+- String - content enclosed by quotes, double quotes, or backticks (ex. 'hello, bob', "automobile rental company", `green park`)
+- Boolean - true or false (ex. true, false)
+- undefined - absence of value (ex. undefined)
+- BigInt - numbers larger than 2^53 - 1 (ex. BigInt(9007199254740991))
+- Symbol - an anonymous, unique property (ex. var sym = Symbol('sym'))
 
-A function is technically a subtype of object, although it will return the string "function" when it's type is checked.
+### Structural Types
+
+- Object - data type for structured data (ex. { name: 'bob', age: 34 })
+- Function - a code snippet that can be called by other code (ex. function sayHello() { return 'hello'; })
+
+### Structural Root (Primitive)
+
+- null - points to a nonexistent value (ex. var score = null)
+
+## Operators
+
+Types and values are important, but by themselves aren't particularly dynamic. Being able to perform arithmetic, combine, compare, perform logical checks, and other operations on values transform them into dynamic values. Different types have available different operations. And some operations behave differently depending on the types involved. Operators can be broken down into a few groups.
+
+### Unary Operators
+
+A unary operation is an operation that involves only one operand.
+
+#### delete
+
+```javascript
+let myObj = {
+  name: 'bob',
+  age: 32,
+  member: true,
+};
+
+delete myObj.age;
+
+myObj; // { name: 'bob', member: true }
+```
+
+#### void
+
+The void operator will evaluate a given expression and then returns `undefined` .
+
+```javascript
+function sayHello() {
+  return 'hello';
+}
+
+sayHello(); // 'hello'
+void sayHello(); // undefined
+```
+
+#### typeof
+
+The typeof operator will evaluate and return a string of the type of the operand value
+
+```javascript
+let name = 'hal';
+let age = 43;
+let isMember = true;
+
+typeof name; // 'string'
+typeof age; // 'number'
+typeof isMember; // 'boolean'
+```
