@@ -113,5 +113,8 @@ let sayHi = function (greeting) {
   return greeting;
 };
 
-console.log(sayHi('hi'));
-console.log(void sayHi('hello'));
+// console.log(sayHi('hi'));
+// console.log(void sayHi('hello'));
+
+console.log(54);
+435;

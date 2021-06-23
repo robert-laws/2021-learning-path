@@ -1,4 +1,4 @@
-# Types and Values
+# Basics of Types and Values
 
 The foundation of any programming language is data. Without data, creating a program is very difficult, if not impossible. Most interactions on the Internet involve data of some kind. Perhaps it's bank account data, or data about a list of products in a shopping cart, or a message on a social media network, or the latest score from the basketball playoffs. Data is the reason why people start up a browser and explore the Internet. JavaScript allows programmers to control data **values** and the **types** of data used in a program.
 
@@ -10,8 +10,8 @@ When speaking of values, it makes sense to do so in conjunction with types. In J
 
 ### Data Types (Primitives)
 
-- Number - include integers and decimals (ex. 17, 2.63, -32.62, 5000.01)
 - String - content enclosed by quotes, double quotes, or backticks (ex. 'hello, bob', "automobile rental company", `green park`)
+- Number - include integers and decimals (ex. 17, 2.63, -32.62, 5000.01)
 - Boolean - true or false (ex. true, false)
 - undefined - absence of value (ex. undefined)
 - BigInt - numbers larger than 2^53 - 1 (ex. BigInt(9007199254740991))
@@ -25,3 +25,74 @@ When speaking of values, it makes sense to do so in conjunction with types. In J
 ### Structural Root (Primitive)
 
 - null - points to a nonexistent value (ex. var score = null)
+
+## Assigning Different Types of Values
+
+Values on their own don't do very much. To make the most out of values, they should be assigned to variables. In JavaScript, the process of assigning a value to a variable is incredibly easy and simple.
+
+```javascript
+var title = 'Tale of Two Cities';
+typeof title; // 'string'
+```
+
+The code above both declares a variable and assigns it a value - a String type of data. Because JavaScript is a [dynamically typed](https://developer.mozilla.org/en-US/docs/Glossary/Dynamic_typing) programming language, the variable `title` can be reassigned as a new type of data.
+
+```javascript
+var title = true; // the variable title is reassigned with a new value
+typeof title; // 'boolean'
+```
+
+The primitive data types can be created in the following ways:
+
+### String
+
+[Strings](https://developer.mozilla.org/en-US/docs/Glossary/String) can be assigned using single quotes, double quotes, or backticks. Using backticks is typically done in conjunction with [template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) (also known as template strings), which allows expressions to be embedded within the string.
+
+```javascript
+var myName = 'bob';
+var myNickname = 'sparky';
+var myFriend = `melvin`;
+
+// using template literals
+var greeting = `hello, how are you ${myFriend}?`;
+```
+
+### Number
+
+[Numbers](https://developer.mozilla.org/en-US/docs/Glossary/Number) can include whole numbers, decimals, and negative numbers. There are some limitations to the how big numbers can get in JavaScript, but generally speaking, the number data type will meet most everyday needs and situations.
+
+```javascript
+var age = 34;
+var price = 53.67;
+var transactionTime = 326.2646223;
+var submersionDepth = -236;
+```
+
+### Boolean
+
+[Booleans](https://developer.mozilla.org/en-US/docs/Glossary/Boolean) can only be assigned a value of `true` or `false` and nothing else.
+
+```javascript
+var isMember = true;
+var completedExam = false;
+```
+
+Booleans are used throughout JavaScript, and are particularly useful as results from comparisons between different types and values.
+
+### Undefined
+
+[Undefined](https://developer.mozilla.org/en-US/docs/Glossary/undefined) values can either be explicitly assigned, or they are assigned by default to declared variables that do not hold any value yet.
+
+```javascript
+var name = undefined;
+var location; // undefined
+```
+
+### BigInt
+
+[BigInt](https://developer.mozilla.org/en-US/docs/Glossary/BigInt) is a fairly new JavaScript data type that is used for numbers that are beyond the range that the primitive type Number can support. The Number data type can reliably handle numbers between -9007199254740991 and 9007199254740991, which are static properties of the Number object `Number.MIN_SAFE_INTEGER` and `Number.MAX_SAFE_INTEGER`. For numbers smaller or larger than this, the BigInt primitive is available. A variable with a value of the type BigInt can be created by appending the letter `n` to an integer.
+
+```javascript
+var myLargeNumber = 9007199254740999n;
+typeof myLargeNumber; // 'bigint'
+```
