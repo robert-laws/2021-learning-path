@@ -26,7 +26,7 @@ When speaking of values, it makes sense to do so in conjunction with types. In J
 
 - null - points to a nonexistent value (ex. var score = null)
 
-## Assigning Different Types of Values
+## Assigning Values - Primitive Types
 
 Values on their own don't do very much. To make the most out of values, they should be assigned to variables. In JavaScript, the process of assigning a value to a variable is incredibly easy and simple.
 
@@ -90,9 +90,112 @@ var location; // undefined
 
 ### BigInt
 
-[BigInt](https://developer.mozilla.org/en-US/docs/Glossary/BigInt) is a fairly new JavaScript data type that is used for numbers that are beyond the range that the primitive type Number can support. The Number data type can reliably handle numbers between -9007199254740991 and 9007199254740991, which are static properties of the Number object `Number.MIN_SAFE_INTEGER` and `Number.MAX_SAFE_INTEGER`. For numbers smaller or larger than this, the BigInt primitive is available. A variable with a value of the type BigInt can be created by appending the letter `n` to an integer.
+[BigInt](https://developer.mozilla.org/en-US/docs/Glossary/BigInt) is a fairly new JavaScript data type (added with the ES2020 release) that is used for numbers that are beyond the range that the primitive type Number can support. The Number data type can reliably handle numbers between -9007199254740991 and 9007199254740991, which are static properties of the Number object `Number.MIN_SAFE_INTEGER` and `Number.MAX_SAFE_INTEGER`. For numbers smaller or larger than this, the BigInt primitive is available. A variable with a value of the type BigInt can be created by appending the letter `n` to an integer.
 
 ```javascript
 var myLargeNumber = 9007199254740999n;
 typeof myLargeNumber; // 'bigint'
 ```
+
+### Symbol
+
+[Symbol](https://developer.mozilla.org/en-US/docs/Glossary/Symbol) was added to JavaScript with ES2015 and can be created by invoking the function `Symbol`. A symbol can be created with an optional description string. Each symbol created is always unique. A common use for symbols is as an object property.
+
+```javascript
+let location = Symbol('location');
+typeof location; // 'symbol'
+
+let place = Symbol('location');
+location === place; // false - symbols are unique, even with the same description string
+
+const company = {
+  name: Symbol('Acme Co.'),
+  location: Symbol('Los Angeles'),
+};
+
+company.name; // Symbol(Acme Co.)
+company.location.description; // 'Los Angeles'
+```
+
+## Assigning Values - Structural Types
+
+### Object
+
+[Objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) are a structural data type that accounts for a wide range of different data within JavaScript. The standout feature of objects in JavaScript is the keyed collections used to create complex data structures. Objects can be created by using the `Object()` constructor or using the object literal syntax.
+
+#### Object Creation with the Object() Constructor
+
+```javascript
+let myItem = Object(); // creates an empty object {}
+
+myItem.name = 'hat';
+myItem.size = 'large';
+myItem.price = 21.47;
+
+myItem; // { name: 'hat', size: 'large', price: 21.47 }
+```
+
+#### Object Creation using object literal syntax
+
+```javascript
+let newEmployee = {
+  name: 'melvin',
+  age: 34,
+  isManager: true,
+};
+
+newEmployee.name; // 'melvin'
+```
+
+### Function
+
+[Functions](https://developer.mozilla.org/en-US/docs/Glossary/Function) is a non-data structural type that can call on other snippets of code to execute. Functions are of the data type 'object', but will return `function` when the typeof operator is called on it. Functions can be declared several different ways.
+
+#### Named Function
+
+```javascript
+function sayHello() {
+  return 'hello!';
+}
+
+sayHello(); // 'hello!'
+```
+
+#### Function Expression
+
+```javascript
+let greeting = function (name) {
+  return `Welcome, ${name}. It's nice to meet you.`;
+};
+
+greeting('bob'); // "Welcome, bob. It's nice to meet you."
+```
+
+#### Anonymous Functions
+
+Are written without a declared name, but must be used as a function expression this way
+
+```javascript
+// Will produce an error without a name or assignment to a variable
+function() {
+  return 'some good information';
+}
+```
+
+#### [Arrow Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
+
+Arrow functions are a special type of function call that can be called like named functions or function expressions, but behave somewhat differently from other functions.
+
+```javascript
+let getProduct = (name) => {
+  return `Finish purchase for ${name}.`;
+};
+
+getProduct('pencil'); // 'Finish purchase for pencil.'
+```
+
+## Assigning Values - Structural Root Primitive
+
+### Null
+
+[Null](https://developer.mozilla.org/en-US/docs/Glossary/Null) points to a nonexistent or invalid value. Null itself is described as a primitive, although it technically is a type of `object`. It can be used to assign a non-value to
