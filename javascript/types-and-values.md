@@ -198,4 +198,8 @@ getProduct('pencil'); // 'Finish purchase for pencil.'
 
 ### Null
 
-[Null](https://developer.mozilla.org/en-US/docs/Glossary/Null) points to a nonexistent or invalid value. Null itself is described as a primitive, although it technically is a type of `object`. It can be used to assign a non-value to
+[Null](https://developer.mozilla.org/en-US/docs/Glossary/Null) points to a nonexistent or invalid value. Null itself is described as a primitive, although it technically is a type of `object`. It can be used to assign a non-value to a variable. It's useful to give a variable a value that will return `false` when performing a comparison.
+
+## Conclusion
+
+Types and values are the cornerstone of JavaScript. It's hard to imagine doing anything useful with the language without using or having a strong understanding of how the different types work and how to assign them values.
