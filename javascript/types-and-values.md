@@ -10,21 +10,21 @@ When speaking of values, it makes sense to do so in conjunction with types. In J
 
 ### Data Types (Primitives)
 
-- String - content enclosed by quotes, double quotes, or backticks (ex. 'hello, bob', "automobile rental company", `green park`)
-- Number - include integers and decimals (ex. 17, 2.63, -32.62, 5000.01)
-- Boolean - true or false (ex. true, false)
-- undefined - absence of value (ex. undefined)
-- BigInt - numbers larger than 2^53 - 1 (ex. BigInt(9007199254740991))
-- Symbol - an anonymous, unique property (ex. var sym = Symbol('sym'))
+- **String** - content enclosed by quotes, double quotes, or backticks (ex. 'hello, bob', "automobile rental company", `green park`)
+- **Number** - include integers and decimals (ex. 17, 2.63, -32.62, 5000.01)
+- **Boolean** - true or false (ex. true, false)
+- **undefined** - absence of value (ex. undefined)
+- **BigInt** - numbers larger than 2^53 - 1 (ex. BigInt(9007199254740991))
+- **Symbol** - an anonymous, unique property (ex. var sym = Symbol('sym'))
 
 ### Structural Types
 
-- Object - data type for structured data (ex. { name: 'bob', age: 34 })
-- Function - a code snippet that can be called by other code (ex. function sayHello() { return 'hello'; })
+- **Object** - data type for structured data (ex. { name: 'bob', age: 34 })
+- **Function** - a code snippet that can be called by other code (ex. function sayHello() { return 'hello'; })
 
 ### Structural Root (Primitive)
 
-- null - points to a nonexistent value (ex. var score = null)
+- **null** - points to a nonexistent value (ex. var score = null)
 
 ## Assigning Values - Primitive Types
 
