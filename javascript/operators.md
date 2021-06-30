@@ -90,3 +90,50 @@ The [unary negation (-)](https://developer.mozilla.org/en-US/docs/Web/JavaScript
 let balance = '23.73';
 -balance; // -23.73;
 ```
+
+#### bitwise not (~)
+
+The [bitwise not (~)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_NOT) will invert the bits of its operand and return an integer of the result.
+
+#### logical not (!)
+
+The [logical not (!)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_NOT) operator will evaluate a value as truthy or falsy and return the negated value as a boolean. When applied to a non-empty strings, non-zero numbers, or object the logical not operator will return false since each of those data types is considered to be true.
+
+```javascript
+let name = 'melvin';
+!name; // false
+
+let number = 232;
+!number; // false
+
+let person = { name: 'bob' };
+!person; // false
+```
+
+When the logical not is applied to a boolean value, it will return the negation of the boolean value.
+
+```javascript
+let isMember = true;
+!isMember; // false
+
+!false; // true
+```
+
+There are other values that are considered 'falsy' and will return true when the logical not operator is applied to an operand.
+
+```javascript
+!null; // true
+!undefined; // true
+!NaN; // true
+!''; // true
+!0; // true
+```
+
+**Double negation** is possible by using two `!!` logical not operators in a row. When applied to an operand, it will evaluate and convert it to a boolean value and then negate that boolean to return the boolean value corresponding to the operands original 'truthy' or 'falsy' value. This is a useful technique when a boolean value is needed in evaluations for things like logical operations.
+
+```javascript
+let name = 'bob';
+!!name; // true
+
+!!null; // false
+```
