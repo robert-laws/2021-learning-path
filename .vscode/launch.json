@@ -8,12 +8,12 @@
       "type": "chrome",
       "request": "launch",
       "name": "Basic Chrome Debugger",
-      "url": "http://localhost:8000/debugging-example/index.html",
+      "url": "http://localhost:8000/_debugging-example/index.html",
       "webRoot": "${workspaceFolder}"
     },
     {
       "name": "React Debug",
-      "url": "http://localhost:8000/debugging-example/index.html",
+      "url": "http://localhost:8000/_debugging-example/index.html",
       "request": "launch",
       "type": "chrome",
       "webRoot": "${workspaceFolder}",

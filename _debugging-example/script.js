@@ -3,7 +3,9 @@ const boxes = document.querySelectorAll('.box');
 
 button.addEventListener('click', () => {
   clearBoxBackground();
-  addBoxBackground(getRandomBox());
+  // addBoxBackground(getRandomBox());
+  let result = isEven(2);
+  console.log(result);
 });
 
 const getRandomBox = () => {
@@ -21,3 +23,17 @@ const addBoxBackground = (randomBox) => {
   boxIndex = randomBox - 1;
   boxes[boxIndex].classList.add('blue-background');
 };
+
+function isEven(n) {
+  if (n == 0) {
+    result = true;
+  } else if (n == 1) {
+    result = false;
+  } else {
+    let number = n - 2;
+    isEven(number);
+  }
+  return result;
+}
+
+// console.log(isEven(2));
