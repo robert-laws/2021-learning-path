@@ -35,4 +35,30 @@ function countChar(word, letter) {
   return total;
 }
 
-console.log(countChar('Buumble', 'u'));
+// console.log(countChar('Buumble', 'u'));
+
+console.log(sayHello('lou'));
+// console.log(typeof info);
+
+let greeting = function () {
+  return 'greetings...';
+};
+
+function sayHello(name = 'unknown') {
+  return `hello, ${name}`;
+}
+
+// var info = 'info';
+// console.log(typeof info);
+let multiply = function (firstNumber) {
+  function by(secondNumber) {
+    return firstNumber * secondNumber;
+  }
+
+  return by;
+};
+
+let math = multiply(5);
+console.log(math);
+
+console.log(math(9));
