@@ -37,7 +37,7 @@ function countChar(word, letter) {
 
 // console.log(countChar('Buumble', 'u'));
 
-console.log(sayHello('lou'));
+// console.log(sayHello('lou'));
 // console.log(typeof info);
 
 let greeting = function () {
@@ -59,6 +59,18 @@ let multiply = function (firstNumber) {
 };
 
 let math = multiply(5);
-console.log(math);
+// console.log(math);
 
-console.log(math(9));
+// console.log(math(9));
+
+let id = 5;
+
+function changeId() {
+  id = 34;
+}
+
+console.log(id);
+
+changeId();
+
+console.log(id);
