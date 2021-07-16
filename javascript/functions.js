@@ -69,8 +69,14 @@ function changeId() {
   id = 34;
 }
 
-console.log(id);
+// console.log(id);
 
 changeId();
 
-console.log(id);
+// console.log(id);
+
+console.log(greetings('melvin'));
+
+function greetings(name) {
+  return `Howdy, ${name}!`;
+}
