@@ -42,19 +42,26 @@ function reverseArray(originalArray) {
 // let itemsArray = ['thing', 4, true, 8, false];
 // console.log(reverseArray(itemsArray));
 
-let numbers = [2, 4, 10];
+let numbers = [2, 4, 10, 20, 50];
 
-function arrayToList(myArray, list = {}) {
-  if (myArray.length > 0) {
-    let value = myArray.shift();
-    list = {
-      value,
-      rest: myArray,
-    };
-    arrayToList(myArray, list);
-  }
-  return list;
+function arrayToList(myArray, myList) {
+  if (myArray.length == 0) return myList;
+
+  let value = myArray.pop();
+  let list = {
+    value,
+    rest: myList == undefined ? null : myList,
+  };
+
+  return arrayToList(myArray, list);
 }
 
+// function arrayToList(array) {
+//   let list = null;
+//   for (let i = array.length - 1; i >= 0; i--) {
+//     list = { value: array[i], rest: list };
+//   }
+//   return list;
+// }
+
 let finalList = arrayToList(numbers);
-console.log(finalList);
