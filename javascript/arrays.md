@@ -161,25 +161,83 @@ cart.join(' '); // 'pencil hat paper belt'
 cart.join('--'); // 'pencil--hat--paper--belt'
 ```
 
---
+#### Destructive sorting and reversing
 
-indexOf()
+**[reverse()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse)**
 
-lastIndexOf()
+Reverses the values in an array and returns the modified array. The original array is modified.
 
---
+```javascript
+let cart = ['pencil', 'hat', 'paper', 'belt'];
+cart.reverse(); // [ 'belt', 'paper', 'hat', 'pencil' ]
+cart; // [ 'belt', 'paper', 'hat', 'pencil' ]
+```
 
-reverse()
+**[sort()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)**
 
-sort()
+Sorts the array into ascending order by default if the optional parameter comparison function is not present. The compare function will compare the two numbers and depending on the result of the comparison and move the numbers to the correct position in the array. The original array is modified.
 
---
+```javascript
+let numbers = [2, 5, 1, 4, 3];
+numbers.sort(); // [1, 2, 3, 4, 5]
+
+function compareNumbers(a, b) {
+  return a - b;
+}
+numbers.sort(compareNumbers); // [1, 2, 3, 4, 5]
+
+function compareNumbersDesc(a, b) {
+  return b - a;
+}
+numbers.sort(compareNumbersDesc); // [ 5, 4, 3, 2, 1 ]
+```
+
+#### Searching the array for specific values
+
+**[indexOf()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf)**
+
+Finds the index location of the first matching item and returns the index value. The search is done using strict equality `===` and will return `-1` if no match is found. The method also accepts an optional second parameter, startIndex, which indicates which index location the search for a match should begin. A negative number for startIndex will begin the search from an offset index location.
+
+```javascript
+let numbers = [2, 6, 8, 1, 7, 2, 7, 9, 2, 15, 37];
+numbers.indexOf(7); // 4
+numbers.indexOf(10); // -1
+numbers.indexOf(2); // 0
+numbers.indexOf(2, 4); // 5
+numbers.indexOf(2, -3); // 8
+
+numbers.indexOf('15'); // -1
+
+let cart = ['pencil', 'hat', 'paper', 'belt'];
+cart.indexOf('hat'); // 1
+cart.indexOf('bubble'); // -1
+```
+
+**[lastIndexOf()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/lastIndexOf)**
+
+Finds the index location of the first matching item starting backwards from the end of the array and returns the index value. The search is done using strict equality `===` and will return `-1` if no match is found. The method also accepts an optional second parameter, startIndex, which indicates which index location the search for a match should begin. A negative number for startIndex will begin the search from an offset index location.
+
+```javascript
+let numbers = [2, 6, 8, 1, 7, 2, 7, 9, 2, 15, 37];
+numbers.lastIndexOf(2); // 8
+numbers.lastIndexOf(15); // 9
+numbers.lastIndexOf(2, 5); // 5
+numbers.lastIndexOf(2, -4); // 5
+```
+
+#### Nondestructive iteration
 
 forEach()
 
 every()
 
 some()
+
+find()
+
+findIndex()
+
+includes()
 
 --
 
@@ -193,18 +251,6 @@ reduce()
 
 --
 
-entries()
-
-find()
-
-findIndex()
-
 flat()
 
 flatMap()
-
-includes()
-
-```
-
-```
