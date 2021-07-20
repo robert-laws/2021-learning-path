@@ -227,30 +227,154 @@ numbers.lastIndexOf(2, -4); // 5
 
 #### Nondestructive iteration
 
-forEach()
+**[forEach()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)**
 
-every()
+Iterates over each value within the array. Accepts a callback function as a parameter, which itself accepts up to three parameters, the iterated element from the array, the index of the current iteration, and the enter array being called upon by the `forEach` method.
 
-some()
+```javascript
+let cart = ['pencil', 'hat', 'paper', 'belt'];
 
-find()
+cart.forEach(function callback(item, index) {
+  console.log(`index: ${index} for item: ${item}`);
+});
 
-findIndex()
+// index: 0 for item: pencil
+// index: 1 for item: hat
+// index: 2 for item: paper
+// index: 3 for item: belt
+```
 
-includes()
+**[every()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every)**
+
+Performs an evaluation on each item in the array and returns true if every item returns true and false if at least one item returns false.
+
+```javascript
+let cart = ['pencil', 'hat', 'paper', 'belt'];
+
+cart.every((word) => word.length > 3); // false
+```
+
+**[some()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some)**
+
+Performs an evaluation on each item in the array and returns true if at least one item returns true and false if all items returns false.
+
+```javascript
+let cart = ['pencil', 'hat', 'paper', 'belt'];
+
+cart.some((word) => word.length > 3); // true
+```
+
+**[find()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)**
+
+Will return the first element in an array that matches a testing function. If nothing matches, undefined is returned.
+
+```javascript
+let people = [
+  { name: 'bob', age: 24 },
+  { name: 'kal', age: 46 },
+  { name: 'mel', age: 33 },
+];
+
+people.find((person) => person.age > 30); // { name: 'kal', age: 46 }
+```
+
+**[findIndex()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex)**
+
+Will return the index value of the first element in an array that matches a testing function. If nothing matches, -1 is returned.
+
+```javascript
+let people = [
+  { name: 'bob', age: 24 },
+  { name: 'kal', age: 46 },
+  { name: 'mel', age: 33 },
+];
+
+people.findIndex((person) => person.age > 30); // 1
+```
+
+**[includes()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes)**
+
+Checks the values within the array and returns true if a match is found and the array includes the value. Returns false if no match is found and the array does not include the value.
+
+```javascript
+let cart = ['pencil', 'hat', 'paper', 'belt'];
+cart.includes('hat'); // true
+cart.includes('button'); // false
+```
 
 --
 
-map()
+**[map()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)**
 
-filter()
+Will return a new array based on the result of a callback function that iterates over each item within an array. Best used for situations where an array will be used based on all the elements within an array.
+
+```javascript
+let numbers = [2, 6, 8];
+
+let double = numbers.map((number) => number * 2);
+
+double; // [ 4, 12, 16 ]
+```
+
+**[filter()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)**
+
+Will return a new array based on a comparison function returning elements that return true and omitting elements that return false. Best for situations where an array will be used based on a filtered array.
+
+```javascript
+let people = [
+  { name: 'bob', age: 24 },
+  { name: 'kal', age: 46 },
+  { name: 'mel', age: 33 },
+];
+
+let youngerPeople = people.filter((person) => {
+  if (person.age < 40) {
+    return person;
+  }
+});
+
+youngerPeople; // [ { name: 'bob', age: 24 }, { name: 'mel', age: 33 } ]
+```
 
 --
 
-reduce()
+**[reduce()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)**
+
+Executes a user-provided reducer function on each item within an array and returns the final result. Makes use of accumulator argument, which holds the result as it iterates over the array and a current value argument, which is the value of the element of the array as it is being iterated over. The reduce function also accepts an optional initial value parameter.
+
+```javascript
+let ages = [25, 28, 32, 35, 28, 20];
+let initialValue = 200;
+
+let totalAges = ages.reduce((total, age) => total + age, initialValue);
+
+totalAges; // 368
+```
 
 --
 
-flat()
+**[flat()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat)**
 
-flatMap()
+Will create a new array with all the sub-array elements of the provided array concatenated. The method accepts an optional depth parameter.
+
+```javascript
+let numbers = [[1, 4], 6, 1, [6, 1, 8], 8];
+numbers.flat(); // [ 1, 4, 6, 1, 6, 1, 8, 8 ]
+
+let newNumbers = [
+  [1, 4],
+  [2, [4, 9]],
+];
+newNumbers.flat(); // [ 1, 4, 2, [ 4, 9 ] ]
+newNumbers.flat(2); // [ 1, 4, 2, 4, 9 ]
+```
+
+**[flatMap()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flatMap)**
+
+Combines the functionality of `flat()` and `map()` to simultaneously map elements to a new array and flatten the newly created array.
+
+```javascript
+let motto = ['to be', 'or not', 'to be, that is the question'];
+let mottoWords = motto.flatMap((part) => part.split(' '));
+mottoWords; // [ 'to', 'be', 'or', 'not', 'to', 'be,', 'that', 'is', 'the', 'question' ]
+```
