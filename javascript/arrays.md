@@ -105,7 +105,7 @@ cart; // ['pencil', 'hat', 'paper', 'belt', 'map'];
 
 **[splice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice)**
 
-Modify an array by removing and or replacing elements from an array starting at a designated index within the array. The return value is the removed items. The original array is modified.
+Modifies an array by removing and or replacing elements from an array starting at a designated index within the array. The return value is the removed items. The original array is modified.
 
 ```javascript
 let cart = ['pencil', 'hat', 'paper', 'belt'];
@@ -121,25 +121,57 @@ cart.splice(1, 2, 'printer', 'computer', 'hard drive'); // ['hat', 'paper'];
 cart; // ['pencil', 'printer', 'computer', 'hard drive', 'belt']
 ```
 
---
+#### Nondestructive methods to concat, slice, or join arrays
 
-reverse()
+**[concat()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat)**
 
-sort()
+Merges two arrays and returns a new array that is a combination. Multiple arrays can be combined by adding them as individual parameters. The original arrays are unmodified.
 
---
+```javascript
+let cart1 = ['pencil', 'pen', 'marker'];
+let cart2 = ['hat', 'cap', 'belt'];
+let combinedCart = cart1.concat(cart2);
+combinedCart; // [ 'pencil', 'pen', 'marker', 'hat', 'cap', 'belt' ]
 
-concat()
+cart1; // ['pencil', 'pen', 'marker'];
+cart2; // ['hat', 'cap', 'belt'];
+```
 
-slice()
+**[slice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice)**
 
-join()
+Creates a new array copying from an original array from a specified starting index location and copying all items up to an optional ending index location. Negative numbers can be used, indicating how much to offset from the end of the array as the starting index. The original array is unmodified.
+
+```javascript
+let cart = ['pencil', 'hat', 'paper', 'belt'];
+cart.slice(1); // [ 'hat', 'paper', 'belt' ]
+cart.slice(1, 3); // [ 'hat', 'paper' ]
+cart.slice(-2); // [ 'paper', 'belt' ]
+
+cart; // ['pencil', 'hat', 'paper', 'belt'];
+```
+
+**[join()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join)**
+
+Creates a string by combining all the items within an array. An optional separator parameter can be passed, which is either a string or will be attempted to be converted to a string. The separator will be placed before all items in the array, but not before the first or after the last. If no separator is defined, a comma is placed between the items.
+
+```javascript
+let cart = ['pencil', 'hat', 'paper', 'belt'];
+cart.join(); // 'pencil,hat,paper,belt'
+cart.join(' '); // 'pencil hat paper belt'
+cart.join('--'); // 'pencil--hat--paper--belt'
+```
 
 --
 
 indexOf()
 
 lastIndexOf()
+
+--
+
+reverse()
+
+sort()
 
 --
 
@@ -172,3 +204,7 @@ flat()
 flatMap()
 
 includes()
+
+```
+
+```
