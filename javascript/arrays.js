@@ -44,17 +44,29 @@ function reverseArray(originalArray) {
 
 let numbers = [2, 4, 10, 20, 50];
 
-function arrayToList(myArray, myList) {
-  if (myArray.length == 0) return myList;
+// function arrayToList(myArray, myList) {
+//   if (myArray.length == 0) return myList;
 
-  let value = myArray.pop();
-  let list = {
-    value,
-    rest: myList == undefined ? null : myList,
-  };
+//   let value = myArray.pop();
+//   let list = {
+//     value,
+//     rest: myList == undefined ? null : myList,
+//   };
 
-  return arrayToList(myArray, list);
-}
+//   return arrayToList(myArray, list);
+// }
+
+// const arrayToList = (myArray, myList) => {
+//   if (myArray.length == 0) return myList;
+
+//   let value = myArray.pop();
+//   let list = {
+//     value,
+//     rest: myList == undefined ? null : myList,
+//   };
+
+//   return arrayToList(myArray, list);
+// };
 
 // function arrayToList(array) {
 //   let list = null;
@@ -64,4 +76,11 @@ function arrayToList(myArray, myList) {
 //   return list;
 // }
 
-let finalList = arrayToList(numbers);
+// let finalList = arrayToList(numbers);
+// console.log(finalList);
+
+const total = numbers.reduce(function (prev, current) {
+  return prev + current;
+}, 14);
+
+console.log(total);
