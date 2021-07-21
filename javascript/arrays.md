@@ -2,6 +2,8 @@
 
 Arrays at their most basic level are collections (or lists) of data. Since programs are constantly working with data, arrays are used extensively in JavaScript. A typical program will add data to list, like products in a shopping cart, which can be stored in an array. The shopping cart array can have items added, removed, and rearranged. To accomplish tasks like this, arrays come with many built-in methods that provide a lot of flexibility when working with them. This article will examine how to create arrays, access data with them, and work with arrays.
 
+There is extensive support for arrays including a [detailed MDN article on arrays](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array).
+
 #### Creating an Array
 
 Arrays can be created using the array literal syntax or using the Array constructor.
@@ -227,6 +229,8 @@ numbers.lastIndexOf(2, -4); // 5
 
 #### Nondestructive iteration
 
+The first group of array iterative methods work with arrays and review the content of arrays, allowing the programmer to use the output to make evaluations.
+
 **[forEach()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)**
 
 Iterates over each value within the array. Accepts a callback function as a parameter, which itself accepts up to three parameters, the iterated element from the array, the index of the current iteration, and the enter array being called upon by the `forEach` method.
@@ -302,7 +306,7 @@ cart.includes('hat'); // true
 cart.includes('button'); // false
 ```
 
---
+The next group of array iterative methods take in the original array and return a new array based on some processing or evaluation of the original array.
 
 **[map()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)**
 
@@ -336,7 +340,7 @@ let youngerPeople = people.filter((person) => {
 youngerPeople; // [ { name: 'bob', age: 24 }, { name: 'mel', age: 33 } ]
 ```
 
---
+The last group of array iterative methods produce a result based on the array's elements.
 
 **[reduce()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)**
 
@@ -350,8 +354,6 @@ let totalAges = ages.reduce((total, age) => total + age, initialValue);
 
 totalAges; // 368
 ```
-
---
 
 **[flat()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat)**
 
