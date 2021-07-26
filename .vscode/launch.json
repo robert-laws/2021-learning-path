@@ -12,6 +12,13 @@
       "webRoot": "${workspaceFolder}"
     },
     {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Chrome Form",
+      "url": "http://localhost:8000/_debugging-example/simpleForm.html",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
       "name": "React Debug",
       "url": "http://localhost:8000/_debugging-example/index.html",
       "request": "launch",
