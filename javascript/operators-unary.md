@@ -1,4 +1,4 @@
-# Operators
+## Operators
 
 Types and values are important, but by themselves aren't particularly dynamic. Being able to perform arithmetic, combine, compare, perform logical checks, and other operations on values transform them into dynamic values. Different types have available different operations. And some operations behave differently depending on the types involved. Operators can be broken down into a few groups.
 
