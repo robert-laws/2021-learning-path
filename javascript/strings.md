@@ -1,6 +1,6 @@
 ## Strings
 
-Strings are representation of textual data in JavaScript and are fundamental to the language. Programs designed for user interaction almost always make use of strings as a key component. In JavaScript, the string data type is wrapped by the String object that provides access to many useful methods that can be used for string manipulation.
+Strings are representation of textual data in JavaScript and are fundamental to the language. Programs designed for user interaction almost always make use of strings as a key component. In JavaScript, the [string data type](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) is wrapped by the String object that provides access to many useful methods that can be used for string manipulation.
 
 #### Creating strings
 
