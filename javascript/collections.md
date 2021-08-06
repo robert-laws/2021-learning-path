@@ -1,4 +1,4 @@
-## Collections
+## Map and Set - Typed Collections
 
 JavaScript has many different ways to group and collect data including in arrays and objects. There are also two other main ways to organize collections of data - Maps and Sets. Although arrays and objects provide many useful features, they also come with some disadvantages. For example, an object is a key collection of values but does not allow for easy iteration of the values or finding the size of the collection. The `Map` and `Set` collections can be useful and provide advantages in certain situations over an array or object.
 
@@ -80,13 +80,13 @@ person.set(contacts, 'work and home');
 
 #### Methods to iterate over a Map object
 
-The `Map` object also has several different ways to iterate over the Map object, its keys, and/or values either through methods available with the Map object or by using the `for..of` loop.
+The `Map` object also has several different ways to iterate. It can iterator over its keys and/or values through the Map object methods or by using the `for..of` or `forEach` loops.
 
 - keys() - returns an iterator object that contains the keys for each item.
 
 - values() - returns an iterator object that contains the values for each item.
 
-- entries() - returns an iterator object that contains the array of [key, value] for each element of the map object.
+- entries() - returns an iterator object that contains the array of [key, value] for each element of the `Map` object.
 
 ```javascript
 let employee = new Map();
@@ -163,3 +163,37 @@ employees.size; // 3
 employees.clear();
 employees.size; // 0
 ```
+
+#### Methods to iterate over a Set object
+
+The `Set` object also has several different ways to iterate over the Set object, which unlike a Map, only has values. It can be iterated either through the Set object methods or by using the `forEach` loop.
+
+- values() - returns an iterator object that contains the values for each item.
+
+- keys() - functions identically to the `values()` method for a `Set` object
+
+- entries() - returns an iterator object that contains the array of [value, value] for each element of the `Set` object.
+
+```javascript
+let holidays = new Set();
+holidays.add('Mothers Day');
+holidays.add('Flag Day');
+holidays.add('Memorial Day');
+holidays.add('Halloween');
+
+holidays.values(); // [Set Iterator] { 'Mothers Day', 'Flag Day', 'Memorial Day', 'Halloween' }
+holidays.keys(); // [Set Iterator] { 'Mothers Day', 'Flag Day', 'Memorial Day', 'Halloween' }
+holidays.entries(); // [Set Entries] { [ 'Mothers Day', 'Mothers Day' ], [ 'Flag Day', 'Flag Day' ], [ 'Memorial Day', 'Memorial Day' ], [ 'Halloween', 'Halloween' ] }
+```
+
+Set objects can also iterated with the `forEach()` method.
+
+```javascript
+holidays.forEach((value) => {
+  console.log(`holiday ${value}`);
+});
+```
+
+#### Conclusion
+
+The `Map` and `Set` objects provide similar, but useful alternatives to arrays and objects for storing collections of data. Maps and Sets offer some clear advantages over arrays and objects - most notably that they maintain the order of the entries as they are added to a collection, which is unlike a collection. And unlike arrays, Maps allow collections with key-value pairs of any type of data, offering a lot of flexibility. They also offer some performance benefits when searching through collection entries.
