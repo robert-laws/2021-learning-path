@@ -69,17 +69,65 @@
 //     console.log(err);
 //   });
 
-const getSomething = () => {
-  return new Promise((resolve, reject) => {
-    resolve('some data...');
-    reject('error...');
-  });
+// const getSomething = () => {
+//   return new Promise((resolve, reject) => {
+//     resolve('some data...');
+//     reject('error...');
+//   });
+// };
+
+// getSomething()
+//   .then((value) => {
+//     console.log(value);
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   });
+
+// const waitForName = (personName) => {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       if (personName !== '') {
+//         resolve(personName);
+//       } else {
+//         reject('Enter a valid name');
+//       }
+//     }, 4000);
+//   });
+// };
+
+// waitForName('')
+//   .then((myName) => {
+//     return `hello, ${myName}!`;
+//   })
+//   .then((greeting) => {
+//     if (greeting.length > 15) {
+//       console.log(`long greeting: ${greeting}`);
+//     } else {
+//       console.log(`short greeting: ${greeting}`);
+//     }
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   })
+//   .finally(() => {
+//     console.log('promise finished...');
+//   });
+
+// Callback
+
+let myGreeting = null;
+
+const getName = (name, callback) => {
+  setTimeout(() => {
+    myGreeting = `howdy, ${name}!`;
+    callback(myGreeting);
+  }, 2000);
 };
 
-getSomething()
-  .then((value) => {
-    console.log(value);
-  })
-  .catch((error) => {
-    console.log(error);
-  });
+const sendGreeting = (greeting) => {
+  console.log(greeting);
+};
+
+getName('bob', sendGreeting);
+// sendGreeting();

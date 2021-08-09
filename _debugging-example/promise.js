@@ -1,4 +1,4 @@
-const API_KEY = 'a74e4a56e51013cf2acc075cc35b7097';
+// const API_KEY = 'YOUR_API_KEY';
 const url = `https://api.openweathermap.org/data/2.5/weather?q=location&APPID=${API_KEY}`;
 
 const weatherDiv = document.querySelector('#temperature');
