@@ -36,4 +36,4 @@ function isEven(n) {
   return result;
 }
 
-// console.log(isEven(2));
+console.log(isEven(2));

@@ -129,5 +129,24 @@ const sendGreeting = (greeting) => {
   console.log(greeting);
 };
 
-getName('bob', sendGreeting);
+// getName('bob', sendGreeting);
 // sendGreeting();
+
+const add = (n1, n2) => {
+  setTimeout(() => {
+    return n1 + n2;
+  }, 2000);
+};
+
+const multiply = (n1, n2) => {
+  return n1 * n2;
+};
+
+const square = (n) => {
+  return n * n;
+};
+
+let v1 = add(5, 8);
+let v2 = multiply(v1, 6);
+let v3 = square(v2);
+console.log(v3); // 6084
