@@ -116,37 +116,107 @@
 
 // Callback
 
-let myGreeting = null;
+// let myGreeting = null;
 
-const getName = (name, callback) => {
-  setTimeout(() => {
-    myGreeting = `howdy, ${name}!`;
-    callback(myGreeting);
-  }, 2000);
-};
+// const getName = (name, callback) => {
+//   setTimeout(() => {
+//     myGreeting = `howdy, ${name}!`;
+//     callback(myGreeting);
+//   }, 2000);
+// };
 
-const sendGreeting = (greeting) => {
-  console.log(greeting);
-};
+// const sendGreeting = (greeting) => {
+//   console.log(greeting);
+// };
 
 // getName('bob', sendGreeting);
 // sendGreeting();
 
-const add = (n1, n2) => {
-  setTimeout(() => {
-    return n1 + n2;
-  }, 2000);
+// const add = (n1, n2) => {
+//   setTimeout(() => {
+//     return n1 + n2;
+//   }, 2000);
+// };
+
+// const multiply = (n1, n2) => {
+//   return n1 * n2;
+// };
+
+// const square = (n) => {
+//   return n * n;
+// };
+
+// let v1 = add(5, 8);
+// let v2 = multiply(v1, 6);
+// let v3 = square(v2);
+// console.log(v3); // 6084
+
+const additionPromise = (number1, number2) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (typeof number1 === 'number' && typeof number2 === 'number') {
+        let result = number1 + number2;
+        resolve(result);
+      } else {
+        reject('Please use numbers');
+      }
+    }, 2000);
+  });
 };
 
-const multiply = (n1, n2) => {
-  return n1 * n2;
+additionPromise(5, 7)
+  .then((result) => {
+    console.log(result);
+  })
+  .catch((error) => {
+    console.error(error);
+  })
+  .finally(() => {
+    console.log('promise completed');
+  });
+
+additionPromise(5, 'hello')
+  .then((result) => {
+    console.log(result);
+  })
+  .catch((error) => {
+    console.error(error);
+  })
+  .finally(() => {
+    console.log('promise completed');
+  });
+
+const myPromise = new Promise((resolve, reject) => {
+  resolve('promise is resolved');
+});
+
+myPromise.then((result) => {
+  console.log(result);
+});
+
+const squarePromise = (number) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (typeof number === 'number') {
+        let result = number * number;
+        resolve(result);
+      } else {
+        reject('Please use a valid number');
+      }
+    }, 2000);
+  });
 };
 
-const square = (n) => {
-  return n * n;
-};
-
-let v1 = add(5, 8);
-let v2 = multiply(v1, 6);
-let v3 = square(v2);
-console.log(v3); // 6084
+additionPromise(2, 4)
+  .then((result) => {
+    return squarePromise(result);
+  })
+  .then((result) => {
+    console.log(`final result: ${result}`);
+  })
+  .catch((error) => {
+    console.log(error);
+  })
+  .finally(() => {
+    console.log('promise operation completed');
+  });

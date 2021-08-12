@@ -110,3 +110,131 @@ As described above, the problem with callbacks is that they can become complex a
 The introduction of the [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) object helps to address these problems and provide a more elegant way of handling asynchronous operations. A Promise represents the eventual completion or failure of an asynchronous operation and provides the means for the programmer to work with asynchronous operations and data.
 
 The core idea behind a promise is that while an asynchronous operation is in process, it will return an intermediate value that can be used to track the progress of the operation. Once the operation is complete, the promise will either resolve to a final value or not. This value can be used to determine the success or failure of the operation.
+
+A core concept of promises are the different states that a promise can experience:
+
+- pending - the promise is in its initial state, neither resolved (fulfilled) or rejected
+- fulfilled (resolved) - the promise operation was completed successfully
+- rejected - the promise operation failed
+
+Entering into either the resolved or rejected option will trigger their associated handler, which are processed by calling the Promise `then` method.
+
+#### Working with Promises
+
+Making use of promises can be done by using pre-existing promises, typically in the form of external libraries or apis that can be consumed as promises or by creating a new Promise with the constructor. By creating a promise from scratch, it's possible to understand what a promise is doing internally.
+
+The following example shows the basics of how to create a new promise. A promise expects an `executor` function that contains custom code to instruct the promise how to either resolve or reject the promise. The executor function includes signatures for a resolve function and reject function, which can be used to pass a value to be handled by the corresponding resolve and reject functions.
+
+```javascript
+const myPromise = new Promise((resolve, reject) => {
+  resolve('promise is resolved');
+});
+
+myPromise.then((result) => {
+  console.log(result);
+});
+```
+
+A more complex example shows how to add control flow to determine whether or not to use the resolve or reject function based on the result of a logical operation within the executor function.
+
+```javascript
+const additionPromise = (number1, number2) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (typeof number1 === 'number' && typeof number2 === 'number') {
+        let result = number1 + number2;
+        resolve(result);
+      } else {
+        reject('Please use numbers');
+      }
+    }, 2000);
+  });
+};
+
+additionPromise(5, 7)
+  .then((result) => {
+    console.log(result);
+  })
+  .catch((error) => {
+    console.error(error);
+  })
+  .finally(() => {
+    console.log('promise completed');
+  });
+
+// 12
+// promise completed
+
+additionPromise(5, 'hello')
+  .then((result) => {
+    console.log(result);
+  })
+  .catch((error) => {
+    console.error(error);
+  })
+  .finally(() => {
+    console.log('promise completed');
+  });
+
+// Please use numbers
+// promise completed
+```
+
+The promise above demonstrates a few different concepts. First, The function `additionPromise` is a regular function that accepts two parameters and returns a promise. The promise is composed of an executor function that includes a resolve and reject function handler. The executor also contains a `setTimeout` function to demonstrate the asynchronous nature of promises. If the passed parameters return true for the logical operation, the numbers are added and the resulting variable is passed to the resolve function, which is can be called by the `then` method.
+
+If the logical operation returns false, then the reject function is called, passing in a string value. The way that this is handled is by calling the `catch` method on the promise. If the reject function is called, the promise will bypass all resolve (including chained) `then` methods and use the `catch` method. Lastly, an optional `finally` method can be called. This method will be called no matter if the promise is resolved or rejected.
+
+#### Chaining promises
+
+As mentioned above, promises can be chained together, which allows multiple promises, which include multiple processes, to be handled before returning a final result.
+
+```javascript
+const additionPromise = (number1, number2) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (typeof number1 === 'number' && typeof number2 === 'number') {
+        let result = number1 + number2;
+        resolve(result);
+      } else {
+        reject('Please use numbers');
+      }
+    }, 2000);
+  });
+};
+
+const squarePromise = (number) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (typeof number === 'number') {
+        let result = number * number;
+        resolve(result);
+      } else {
+        reject('Please use a valid number');
+      }
+    }, 2000);
+  });
+};
+
+additionPromise(2, 4)
+  .then((result) => {
+    return squarePromise(result);
+  })
+  .then((result) => {
+    console.log(`final result: ${result}`);
+  })
+  .catch((error) => {
+    console.log(error);
+  })
+  .finally(() => {
+    console.log('promise operation completed');
+  });
+
+// final result: 36
+// promise operation completed
+```
+
+The example above shows how to consume multiple promises and each resolves to return a result that can be used by the promise to step through an asynchronous operation.
+
+#### Conclusion
+
+Promises are tricky to understand if the only way they are encountered is by trying to consume them. By creating a promise and understanding how they're composed, it's much easier to understand the best steps to take to use them.
