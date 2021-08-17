@@ -57,7 +57,76 @@ const combineTwoAndThree = (func) => {
 
 console.log(combineTwoAndThree(add)); // 5;
 console.log(combineTwoAndThree((x, y) => x + y)); // 5
-
 console.log(combineTwoAndThree(subtract)); // -1
-
 console.log(combineTwoAndThree(Math.max)); // 3
+
+// functions that return functions
+const createPrinter = () => {
+  return () => console.log('hello...');
+};
+
+const myPrint = createPrinter();
+myPrint();
+
+const createMultiplier = (y) => (x) => x * y;
+
+const myDouble = createMultiplier(2);
+const myTriple = createMultiplier(3);
+const quadruple = createMultiplier(4);
+
+console.log(quadruple(9));
+
+// closure - the function that is returned still has access to the outer function scope
+const createMyPrinter = () => {
+  const myFavoriteNumber = 42;
+  return () => console.log(`my favorite number is ${myFavoriteNumber}.`);
+};
+
+const printer = createMyPrinter();
+printer();
+
+// private variable in closure
+const Person = ({ name, age, job }) => {
+  let _name = name;
+  let _age = age;
+  let _job = job;
+
+  return {
+    getName: () => _name,
+    getAge: () => _age,
+    getJob: () => _job,
+
+    setAge: (newAge) => {
+      _age = newAge;
+    },
+
+    setJob: (newJob) => {
+      _job = newJob;
+    },
+  };
+};
+
+const me = Person({ name: 'Kal', age: 30, job: 'Software Engineer' });
+console.log(me.getName()); // Kal;
+
+console.log(me.getJob()); // Software Engineer
+me.setJob('Manager');
+console.log(me.getJob()); // Software Engineer
+
+// higher-order functions
+const divide = (x, y) => x / y;
+
+const secondArgumentIsntZero =
+  (func) =>
+  (...args) => {
+    if (args[1] === 0) {
+      console.log('error dividing by zero');
+      return null;
+    }
+
+    return func(...args);
+  };
+
+const divideSafe = secondArgumentIsntZero(divide);
+console.log(divideSafe(4, 2)); // 2
+console.log(divideSafe(4, 0)); // 2
