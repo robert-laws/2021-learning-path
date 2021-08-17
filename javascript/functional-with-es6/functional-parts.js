@@ -139,3 +139,10 @@ const newArrayWithReduce = (array, func) => {
 console.log(newArrayWithReduce([1, 2, 3], (x) => x * 2));
 console.log(newArrayWithReduce([5, 6, 7, 8, 9, 10], (x) => -x));
 console.log(newArrayWithReduce(['a', 'b', 'c', 'd'], (x) => x.toUpperCase()));
+
+// find
+let items = ['pencil', 'pen', 'paper', 'alphabet', 'apple', 'computer'];
+const compare = (test) => (word) => word.toLowerCase() === test.toLowerCase();
+const wordInList = (list, word) => list.find(compare(word));
+
+console.log(wordInList(items, 'orange'));
