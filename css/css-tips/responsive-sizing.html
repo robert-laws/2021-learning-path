@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Sizing</title>
+    <style>
+      .container {
+        margin: 0 auto;
+        padding: 0 1rem;
+        border: 1px solid #000;
+        width: min(70ch, calc(100vw - 4rem));
+      }
+
+      h2 {
+        font-size: 3rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      p {
+        /* width: max(70ch, 20rem); */
+        font-size: clamp(1rem, 2vw, 3vw);
+      }
+
+      #first-paragraph::first-letter {
+        font-size: 4em;
+        float: left;
+        float: inline-start;
+        margin: 0.1em 0.1em 0.1em 0;
+        padding: 0.2rem 0.1em;
+        background-color: hsl(0, 59%, 41%);
+        color: white;
+        text-shadow: 3px 3px 0 #000;
+      }
+
+      p:last-child {
+        background-color: darkslategrey;
+        color: white;
+        padding: 1rem;
+      }
+
+      p:last-child::selection {
+        background-color: hsl(82, 69%, 25%);
+      }
+
+      p:nth-child(3n) {
+        line-height: 2;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Lorem ipsum dolor sit amet. Lorem, ipsum dolor.</h2>
+      <p id="first-paragraph">
+        Welcome ipsum dolor sit amet consectetur, adipisicing elit. Labore
+        veniam omnis expedita exercitationem ducimus velit mollitia sunt. Sunt
+        quidem laboriosam, temporibus pariatur nihil numquam! Eveniet adipisci
+        dolorum in minima culpa eos voluptatem totam, iusto veniam.
+      </p>
+      <p>
+        Ea ex veritatis laudantium ullam sint esse, consequuntur quas quam
+        deserunt fuga accusantium ipsam facilis tenetur doloribus ducimus
+        voluptatum porro asperiores distinctio et voluptas, nemo praesentium sed
+        quia! Dignissimos sint, rem pariatur culpa consequatur quod?
+      </p>
+      <p>
+        Dicta mollitia consectetur, commodi quibusdam consequatur maiores soluta
+        porro consequuntur odit, nemo quia, optio itaque? Incidunt nesciunt
+        iusto impedit assumenda maxime quasi enim unde inventore? Hic,
+        reprehenderit ipsam velit quo porro iure molestias tempore. Natus?
+      </p>
+    </div>
+  </body>
+</html>
