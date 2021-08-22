@@ -226,3 +226,34 @@ Light or dark mode can be triggered with custom properties and a media query.
   }
 }
 ```
+
+## Layout
+
+Grid, Flex, or Float? Which one is the best for which situations?
+
+- Two Dimension layout? => CSS Grid Layout
+- One Dimension layout? => Flexbox
+- Text Wrapping? => Float
+- Vertical Stacking on Z-Axis? => CSS Grid Layout
+
+It's possible to add space between grid or flexbox items. This can be done with the `gap` property. Reduces the size of the items with the grid or flexbox to include the gap spacing and keeps the grid and flexbox the original size.
+
+```css
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem 2rem;
+}
+```
+
+Pseudo-Elements are included for purposes of generating grids and flex items. Can create unexpected results where solutions like clearfix are used.
+
+```css {
+.grid::before {
+  content: 'Grid';
+}
+
+.grid::after {
+  content: 'After Grid';
+}
+```
