@@ -189,3 +189,40 @@ p:nth-child(2n) {
   line-height: 1.5;
 }
 ```
+
+## Custom Properties
+
+Allow for the use of variables in CSS. It's possible to add a default value to use if a custom property is absent. Custom properties can also be nested and can be used to create a more complex style.
+
+```css
+:root {
+  --line-width: 0.75rem;
+  --key-color: dodgerblue;
+  --box-unit: 1rem;
+  --box-offset: calc(var(--box-unit) * 1));
+  --box-padding: var(--box-unit);
+  --box-border: calc(var(--box-unit) / 2);
+}
+
+.card {
+  border: var(--line-width, 1px) solid var(--key-color, #000);
+}
+```
+
+Light or dark mode can be triggered with custom properties and a media query.
+
+```css
+:root {
+  --background-color: white;
+  --font-color: black;
+  --key-color: purple;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: hsl(291, 45%, 5%);
+    --font-color: hsl(291, 20%, 95%);
+    --key-color: hsl(291, 64%, 42%);
+  }
+}
+```
