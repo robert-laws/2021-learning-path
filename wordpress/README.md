@@ -1,7 +1,5 @@
 # WordPress: Understanding the New Paradigm - Notes
 
-## Terminology
-
 ## The Present
 
 ### Key Terminology
