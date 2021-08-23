@@ -31,3 +31,5 @@ Block-Level library - The block library is a collection of blocks that can be us
 Block suites are single libraries that add multiple blocks and maintain a consistent look and feel. Together, the individual blocks making up the suite can also add advanced functionality and work in combination with each other. Often a lot of overlap between blocks in a suite and core blocks.
 
 ### Creating and Enforcing a Block Strategy
+
+Ensures that blocks are used consistently, informs decisions about what blocks to add, ensures everyone uses the correct blocks, and helps with migration and maintenance.
