@@ -32,4 +32,4 @@ Block suites are single libraries that add multiple blocks and maintain a consis
 
 ### Creating and Enforcing a Block Strategy
 
-Ensures that blocks are used consistently, informs decisions about what blocks to add, ensures everyone uses the correct blocks, and helps with migration and maintenance.
+Ensures that blocks are used consistently, informs decisions about what blocks to add, ensures everyone uses the correct blocks, and helps with migration and maintenance. One tip is to use the Block Manager to control which blocks are available for use on the wordpress site.
